@@ -40,12 +40,12 @@ svg:not(:root) {
 }
 @font-face {
   font-family: icons;
-  src: url(http://www.jayoconnor.com/fonts/icons.eot);
-  src: url(http://www.jayoconnor.com/fonts/icons.eot?#iefix)
+  src: url(https://www.jayoconnor.com/fonts/icons.eot);
+  src: url(https://www.jayoconnor.com/fonts/icons.eot?#iefix)
       format("embedded-opentype"),
-    url(http://www.jayoconnor.com/fonts/icons.woff) format("woff"),
-    url(http://www.jayoconnor.com/fonts/icons.ttf) format("truetype"),
-    url(http://www.jayoconnor.com/fonts/icons.svg#icons) format("svg");
+    url(https://www.jayoconnor.com/fonts/icons.woff) format("woff"),
+    url(https://www.jayoconnor.com/fonts/icons.ttf) format("truetype"),
+    url(https://www.jayoconnor.com/fonts/icons.svg#icons) format("svg");
   font-weight: 400;
   font-style: normal;
 }
@@ -210,7 +210,7 @@ dd {
   height: 14px;
   line-height: 14px;
   vertical-align: text-top;
-  background-image: url('http://www.jayoconnor.com/styles/url("../images/glyphicons-halflings.png")');
+  background-image: url('https://www.jayoconnor.com/styles/url("../images/glyphicons-halflings.png")');
   background-position: 14px 14px;
   background-repeat: no-repeat;
   margin-top: 1px;
@@ -404,7 +404,7 @@ body {
   padding-top: 60px;
   padding-bottom: 40px;
   background-color: #E3F2FD;
-  background-image: url(http://www.jayoconnor.com/images/noise.png);
+  background-image: url(https://www.jayoconnor.com/images/noise.png);
 }
 body a,
 body a:hover {
@@ -429,27 +429,27 @@ body #social {
   -ms-transition: all 0.3s;
 }
 .icons a.twitter {
-  background: url(http://www.jayoconnor.com/images/social-icons/twitter.png)
+  background: url(https://www.jayoconnor.com/images/social-icons/twitter.png)
     left top no-repeat;
 }
 .icons a.facebook {
-  background: url(http://www.jayoconnor.com/images/social-icons/facebook.png)
+  background: url(https://www.jayoconnor.com/images/social-icons/facebook.png)
     left top no-repeat;
 }
 .icons a.email {
-  background: url(http://www.jayoconnor.com/images/social-icons/email.png) left
+  background: url(https://www.jayoconnor.com/images/social-icons/email.png) left
     top no-repeat;
 }
 .icons a.github {
-  background: url(http://www.jayoconnor.com/images/social-icons/github.png) left
+  background: url(https://www.jayoconnor.com/images/social-icons/github.png) left
     top no-repeat;
 }
 .icons a.googleplus {
-  background: url(http://www.jayoconnor.com/images/social-icons/googleplus.png)
+  background: url(https://www.jayoconnor.com/images/social-icons/googleplus.png)
     left top no-repeat;
 }
 .icons a.google {
-  background: url(http://www.jayoconnor.com/images/social-icons/google.png) left
+  background: url(https://www.jayoconnor.com/images/social-icons/google.png) left
     top no-repeat;
 }
 .icons a:hover {
