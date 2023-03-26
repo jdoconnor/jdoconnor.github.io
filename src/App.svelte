@@ -5,7 +5,6 @@
   import discordLogo from "./assets/discord.svg";
   import linkedInLogo from "./assets/linkedin.svg";
   import Icon from "./lib/icon.svelte";
-  import LayoutGrid, { Cell } from "@smui/layout-grid";
 </script>
 
 <div id="container">
