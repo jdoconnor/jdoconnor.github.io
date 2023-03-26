@@ -4,7 +4,7 @@
   export let image;
 </script>
 
-<a class={name} href={link} style="background:url({image}" aria-label={name}><span /></a>
+<a class={name} href={link} aria-label={name}> {@html image}</a>
 
 <style>
   a {
@@ -14,5 +14,9 @@
     margin: 10px;
     vertical-align: middle;
     background-repeat: no-repeat;
+    fill: #8aa29e;
+  }
+  a:hover {
+    fill: black;
   }
 </style>

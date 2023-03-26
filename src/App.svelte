@@ -1,9 +1,9 @@
 <script lang="ts">
-  import facebookLogo from "./assets/facebook.svg";
-  import githubLogo from "./assets/github.svg";
-  import gmailLogo from "./assets/gmail.svg";
-  import discordLogo from "./assets/discord.svg";
-  import linkedInLogo from "./assets/linkedin.svg";
+  import facebookLogo from "./assets/facebook.svg?raw";
+  import githubLogo from "./assets/github.svg?raw";
+  import gmailLogo from "./assets/gmail.svg?raw";
+  import discordLogo from "./assets/discord.svg?raw";
+  import linkedInLogo from "./assets/linkedin.svg?raw";
   import Icon from "./lib/icon.svelte";
 </script>
 
