@@ -17,6 +17,6 @@
     fill: #8aa29e;
   }
   a:hover {
-    fill: black;
+    fill: #2c5784;
   }
 </style>

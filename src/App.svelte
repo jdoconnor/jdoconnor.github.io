@@ -28,11 +28,11 @@
 <style>
   a {
     font-weight: 500;
-    color: #646cff;
+    color: #5b1865;
     text-decoration: inherit;
   }
   a:hover {
-    color: #535bf2;
+    color: #2c5784;
   }
   :global(body) {
     background-image: url("/noise.png");
@@ -46,14 +46,14 @@
 
   #content {
     display: block;
-    border: 2px solid #686963;
+    border: 2px solid #251101;
     background-color: #8aa29e;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     line-height: 20px;
-    color: #fafafa;
+    color: #251101;
     padding: 60px;
     font-size: 18px;
-    font-weight: 200;
+    font-weight: 500;
     border-radius: 10px;
   }
 </style>
