@@ -4,6 +4,7 @@
   import gmailLogo from "./assets/gmail.svg?raw";
   import discordLogo from "./assets/discord.svg?raw";
   import linkedInLogo from "./assets/linkedin.svg?raw";
+  import scheduleLogo from "./assets/calendar.svg?raw";
   import Icon from "./lib/icon.svelte";
 </script>
 
@@ -16,11 +17,12 @@
   </div>
   <div id="social">
     <div class="icons">
-      <Icon name="facebook" image={facebookLogo} link="https://www.facebook.com/jdoconnor" />
-      <Icon name="github" image={githubLogo} link="https://www.github.com/jdoconnor" />
       <Icon name="linkedin" image={linkedInLogo} link="https://www.linkedin.com/in/jdoconnor" />
+      <Icon name="schedule" image={scheduleLogo} link="https://www.cal.com/jdoconnor" />
+      <Icon name="github" image={githubLogo} link="https://www.github.com/jdoconnor" />
       <Icon name="email" image={gmailLogo} link="mailto:jaydoconnor@gmail.com" />
       <Icon name="discord" image={discordLogo} link="https://discordapp.com/users/257316698728693760" />
+      <Icon name="facebook" image={facebookLogo} link="https://www.facebook.com/jdoconnor" />
     </div>
   </div>
 </div>
