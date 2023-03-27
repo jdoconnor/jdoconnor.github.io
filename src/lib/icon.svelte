@@ -4,7 +4,7 @@
   export let image;
 </script>
 
-<a href={link} aria-label={name}> {@html image}</a>
+<a href={link} aria-label={name} title={name} target="_blank">{@html image}</a>
 
 <style>
   a {

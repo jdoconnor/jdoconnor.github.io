@@ -17,12 +17,12 @@
   </div>
   <div id="social">
     <div class="icons">
-      <Icon name="linkedin" image={linkedInLogo} link="https://www.linkedin.com/in/jdoconnor" />
-      <Icon name="schedule" image={scheduleLogo} link="https://www.cal.com/jdoconnor" />
-      <Icon name="github" image={githubLogo} link="https://www.github.com/jdoconnor" />
-      <Icon name="email" image={gmailLogo} link="mailto:jaydoconnor@gmail.com" />
-      <Icon name="discord" image={discordLogo} link="https://discordapp.com/users/257316698728693760" />
-      <Icon name="facebook" image={facebookLogo} link="https://www.facebook.com/jdoconnor" />
+      <Icon name="View my LinkedIn profile" image={linkedInLogo} link="https://www.linkedin.com/in/jdoconnor" />
+      <Icon name="Schedule a meeting with me" image={scheduleLogo} link="https://www.cal.com/jdoconnor" />
+      <Icon name="View my Github profile" image={githubLogo} link="https://www.github.com/jdoconnor" />
+      <Icon name="Email me" image={gmailLogo} link="mailto:jaydoconnor@gmail.com" />
+      <Icon name="View my Discord profile" image={discordLogo} link="https://discordapp.com/users/257316698728693760" />
+      <Icon name="View my Facebook page" image={facebookLogo} link="https://www.facebook.com/jdoconnor" />
     </div>
   </div>
 </div>
