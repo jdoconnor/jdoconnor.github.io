@@ -12,7 +12,7 @@
   <div id="content">
     My name is Jay. I manage teams that write scalable platforms. Most of my time is spent managing teams at
     <a href="https://www.quip.com/" target="_blank">Quip.com</a>
-    <span> and creating or contributing to&nbsp;</span>
+    <span>and creating or contributing to</span>
     <a href="https://www.github.com/jdoconnor" target="_blank">open source software</a>
   </div>
   <div id="social">
