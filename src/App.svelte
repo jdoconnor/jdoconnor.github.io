@@ -10,10 +10,11 @@
 
 <div id="container">
   <div id="content">
-    My name is Jay. I manage teams that write scalable platforms. Most of my time is spent managing teams at
-    <a href="https://www.quip.com/" target="_blank">Quip.com</a>
-    <span>and creating or contributing to</span>
-    <a href="https://www.github.com/jdoconnor" target="_blank">open source software</a>
+    My name is Jay. I work on tech, manage teams, and help people grow in their careers. Recently, I was managing teams
+    at <a href="https://www.quip.com/" target="_blank">Quip</a> and
+    <a href="https://www.slack.com/" target="_blank">Slack</a>.
+    <span>I also enjoy contributing to</span>
+    <a href="https://www.github.com/jdoconnor" target="_blank">open source software</a> when I have a chance.
   </div>
   <div id="social">
     <div class="icons">
@@ -22,7 +23,6 @@
       <Icon name="View my Github profile" image={githubLogo} link="https://www.github.com/jdoconnor" />
       <Icon name="Email me" image={gmailLogo} link="mailto:jaydoconnor@gmail.com" />
       <Icon name="View my Discord profile" image={discordLogo} link="https://discordapp.com/users/257316698728693760" />
-      <Icon name="View my Facebook page" image={facebookLogo} link="https://www.facebook.com/jdoconnor" />
     </div>
   </div>
 </div>
