@@ -37,7 +37,7 @@
     color: #2c5784;
   }
   :global(body) {
-    background-image: url("/noise.png");
+    background-image: url("$lib/assets/noise.png");
     background-color: #e3f2fd;
   }
   #container {
