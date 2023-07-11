@@ -1,11 +1,11 @@
 <script lang="ts">
-  import facebookLogo from "./assets/facebook.svg?raw";
-  import githubLogo from "./assets/github.svg?raw";
-  import gmailLogo from "./assets/gmail.svg?raw";
-  import discordLogo from "./assets/discord.svg?raw";
-  import linkedInLogo from "./assets/linkedin.svg?raw";
-  import scheduleLogo from "./assets/calendar.svg?raw";
-  import Icon from "./lib/icon.svelte";
+  import facebookLogo from "$lib/assets/facebook.svg?raw";
+  import githubLogo from "$lib/assets/github.svg?raw";
+  import gmailLogo from "$lib/assets/gmail.svg?raw";
+  import discordLogo from "$lib/assets/discord.svg?raw";
+  import linkedInLogo from "$lib/assets/linkedin.svg?raw";
+  import scheduleLogo from "$lib/assets/calendar.svg?raw";
+  import Icon from "$lib/icon.svelte";
 </script>
 
 <div id="container">

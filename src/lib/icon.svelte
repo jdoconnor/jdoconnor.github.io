@@ -1,7 +1,7 @@
-<script>
-  export let name;
-  export let link;
-  export let image;
+<script lang="ts">
+  export let name: string;
+  export let link: string;
+  export let image: string;
 </script>
 
 <a href={link} aria-label={name} title={name} target="_blank">{@html image}</a>
