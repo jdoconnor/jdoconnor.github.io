@@ -42,8 +42,28 @@
 <style>
 	:global(body) {
 		background-image: url('$lib/assets/noise.png');
-		background-color: #e3f2fd;
+		background-color: var(--bg-color);
 	}
+	/* CSS HEX */
+	:global(:root) {
+		--tiffany-blue: #84dcc6ff;
+		--columbia-blue: #d6edffff;
+		--uranian-blue: #acd7ecff;
+		--vista-blue: #8b95c9ff;
+		--viridian: #478978ff;
+
+		--bg-color: var(--columbia-blue);
+		--text-color: #282828;
+		--content-bg-color: var(--tiffany-blue);
+		--accent-color: var(--viridian);
+		--link-color: var(--uranian-blue);
+		--dark-link-color: var(--viridian);
+		--secondary-content-bg-color: #d6f1ff;
+
+		--lighten-percentage: 5%;
+		--darken-precentage: 5%;
+	}
+
 	#container {
 		width: 80%;
 		margin: 20px auto;
@@ -51,11 +71,10 @@
 
 	#content {
 		display: block;
-		border: 2px solid #251101;
-		background-color: #8aa29e;
+		border: 2px solid var(--accent-color);
+		background-color: var(--content-bg-color);
 		font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-		line-height: 20px;
-		color: #251101;
+		color: var(--text-color);
 		font-size: 18px;
 		font-weight: 500;
 		border-radius: 10px;
