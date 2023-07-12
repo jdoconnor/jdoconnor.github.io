@@ -8,7 +8,7 @@
 	</h2>
 	<ol style="--length: 3" role="list">
 		<li style="--i: 1">
-			<h3>SvelteKit</h3>
+			<h3>SvelteKit w/ Typescript</h3>
 			<p>
 				<a href="https://kit.svelte.dev/" target="_blank">SvelteKit</a> is a framework for building full
 				stack apps with Svelte. Like NuxtJS or Next.js, but for Svelte instead of React.
@@ -17,8 +17,8 @@
 		<li style="--i: 2">
 			<h3>SQLite</h3>
 			<p>
-				File based SQL database. Typescript has a lot of different options for a driver, and they're
-				all good, but slightly weird.
+				File based SQL database. Typescript has a lot of different options for a driver. They're all
+				fine, but slightly weird in their own way.
 			</p>
 		</li>
 		<li style="--i: 3">
@@ -37,7 +37,7 @@
 	</h2>
 	<ol style="--length: 3" role="list">
 		<li style="--i: 1">
-			<h3>SvelteKit</h3>
+			<h3>SvelteKit w/ Typescript</h3>
 			<p>
 				<a href="https://kit.svelte.dev/" target="_blank">SvelteKit</a> is a framework for building full
 				stack apps with Svelte. Like NuxtJS or Next.js, but for Svelte instead of React.
