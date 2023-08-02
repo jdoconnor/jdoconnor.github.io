@@ -47,15 +47,15 @@
 			<h3>Firebase</h3>
 			<p>
 				<a href="https://firebase.google.com/" target="_blank">Firebase</a> is a platform of tools for
-				building web and mobile apps with a generous free tier. This project uses RemoteConfig, Firestore,
-				and Analytics.
+				building web and mobile apps with a generous free tier. This project uses RemoteConfig and Analytics.
 			</p>
 		</li>
 		<li style="--i: 3">
 			<h3>Cloudflare</h3>
 			<p>
 				<a href="https://www.cloudflare.com">Cloudflare</a> is a platform of tools for building web and
-				mobile apps with a generous free tier. This project is using Pages (their hosting service)
+				mobile apps with a generous free tier. This project is using Pages (their hosting service) and
+				D1 (sqlite database)
 			</p>
 		</li>
 	</ol>
