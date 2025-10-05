@@ -2,12 +2,12 @@
 	import ProjectCard from "./ProjectCard.svelte";
 </script>
 
-<div class="space-y-4">
-	<h1 class="text-3xl font-bold mb-8">What I'm working on and with as of May 13, 2024</h1>
+<section class="card fade-in">
+	<h1 class="h1 gradient-text">What I'm working on (as of May 13, 2024)</h1>
 	<ProjectCard
 		image="/pottytracker_app.jpg"
 		description="A progeressive web app for tracking your dog's potty times with the rest of your family"
-		title="PottyTracker.app"
+		title="DogShitAI.com"
 		tech={[
 			{
 				name: "SvelteKit",
@@ -32,7 +32,7 @@
 				color: "neutral",
 			},
 		]}
-		link="https://pottytracker.app"
+		link="https://dogshitai.com"
 	/>
 	<ProjectCard
 		title="CommonSignature.com"
@@ -60,7 +60,7 @@
 			{
 				name: "GraphQL",
 				tooltip: "Over the wire query language for apis",
-				color: "primary-contet",
+				color: "primary-content",
 			},
 			{
 				name: "SvelteKit",
@@ -70,4 +70,4 @@
 		]}
 		link="https://stuffiuse.app"
 	/>
-</div>
+</section>

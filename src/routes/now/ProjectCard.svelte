@@ -7,29 +7,28 @@
 		link?: string;
 	};
 	let { image, description, title, tech, link }: Props = $props();
-	// badge-primary badge-primary-content badge-secondary-content badge-secondary badge-neutral badge-ghost badge-accent badge-info badge-success badge-warning badge-error
 </script>
 
-<div class="card lg:card-side bg-base-100 shadow-xl margin-md">
-	<figure>
-		{#if image}
-			<img src={image} alt={title} class="max-h-96" />
-		{/if}
-	</figure>
-	<div class="card-body">
-		<h2 class="card-title">{title}</h2>
-		<p>{description}</p>
-		<div class="badges">
-			{#each tech as { name, tooltip, color }}
-				<div class="tooltip" data-tip={tooltip}>
-					<div class="badge badge-{color ?? 'primary'}">{name}</div>
+<div class="card project-card">
+	{#if image}
+		<figure>
+			<img src={image} alt={title} />
+		</figure>
+	{/if}
+	<div class="project-content">
+		<h2 class="project-title">{title}</h2>
+		<p class="project-description">{description}</p>
+		<div class="tech-badges">
+			{#each tech as { name, tooltip }}
+				<div class="tech-badge" title={tooltip}>
+					{name}
 				</div>
 			{/each}
 		</div>
-		<div class="card-actions justify-end">
-			{#if link}
-				<a href={link} target="_blank btn btn-primary">Go to app</a>
-			{/if}
-		</div>
+		{#if link}
+			<div class="project-actions">
+				<a href={link} target="_blank" rel="noopener noreferrer" class="project-link">Go to app</a>
+			</div>
+		{/if}
 	</div>
 </div>

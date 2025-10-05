@@ -5,11 +5,11 @@
 	import linkedInLogo from "$lib/assets/linkedin.svg?raw";
 	import scheduleLogo from "$lib/assets/calendar.svg?raw";
 	import Icon from "$lib/icon.svelte";
-	import "tailwindcss/tailwind.css";
+	import "../theme.css";
 </script>
 
 <div class="container mx-auto">
-	<div id="content">
+	<div id="content" class="content-padding">
 		<slot />
 	</div>
 	<footer id="social" class="footer footer-center text-base-content">
