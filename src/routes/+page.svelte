@@ -10,8 +10,8 @@
 				href="https://www.securitypal.com/"
 				target="_blank"
 				rel="noreferrer noopener">SecurityPal</a
-			>. There are a few <a href="/now">projects I'm working on now</a> and I also enjoy
-			contributing to
+			>. There are a few <a href="/now">projects I'm working on now</a>, I occasionally write
+			about tech and leadership on my <a href="/blog">blog</a>, and I also enjoy contributing to
 			<a href="https://www.github.com/jdoconnor" target="_blank" rel="noreferrer noopener"
 				>open source software</a
 			>
