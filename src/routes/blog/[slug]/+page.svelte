@@ -1,14 +1,14 @@
 <script lang="ts">
-	import type { PageData } from './$types';
+	import type { PageData } from "./$types";
 
 	const { data }: { data: PageData } = $props();
 
 	function formatDate(dateString: string): string {
 		const date = new Date(dateString);
-		return date.toLocaleDateString('en-US', {
-			year: 'numeric',
-			month: 'long',
-			day: 'numeric'
+		return date.toLocaleDateString("en-US", {
+			year: "numeric",
+			month: "long",
+			day: "numeric",
 		});
 	}
 </script>
@@ -21,7 +21,7 @@
 <div class="max-w-4xl mx-auto">
 	<article class="prose prose-lg max-w-none">
 		<div class="mb-8">
-			<a href="/blog" class="text-sm text-primary hover:underline mb-4 inline-block">
+			<a href="/blog" class="text-sm text-accent-primary hover:underline mb-4 inline-block">
 				← Back to blog
 			</a>
 		</div>
@@ -65,7 +65,7 @@
 	}
 
 	:global(.blog-content a) {
-		@apply text-primary hover:underline;
+		@apply text-accent-primary hover:underline;
 	}
 
 	:global(.blog-content pre) {
@@ -81,7 +81,7 @@
 	}
 
 	:global(.blog-content blockquote) {
-		@apply border-l-4 border-primary pl-4 italic my-4;
+		@apply border-l-4 border-accent-primary pl-4 italic my-4;
 	}
 
 	:global(.blog-content strong) {
