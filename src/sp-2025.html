@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecurityPal Wrapped 2025</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Circular', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            overflow: hidden;
+            background: #000;
+            color: #fff;
+        }
+
+        .slide-container {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            opacity: 0;
+            transform: translateY(100%);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .slide.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .slide.exiting {
+            opacity: 0;
+            transform: translateY(-100%);
+        }
+
+        /* Gradient backgrounds */
+        .gradient-purple {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .gradient-pink {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .gradient-blue {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        .gradient-orange {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+        }
+
+        .gradient-green {
+            background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+        }
+
+        .gradient-red {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+        }
+
+        .gradient-teal {
+            background: linear-gradient(135deg, #13547a 0%, #80d0c7 100%);
+        }
+
+        .gradient-violet {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+        }
+
+        .gradient-gold {
+            background: linear-gradient(135deg, #f7971e 0%, #ffd200 100%);
+        }
+
+        .gradient-dark {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        }
+
+        .gradient-indigo {
+            background: linear-gradient(135deg, #4e54c8 0%, #8f94fb 100%);
+        }
+
+        .gradient-sunset {
+            background: linear-gradient(135deg, #ff6a00 0%, #ee0979 100%);
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 8rem;
+            font-weight: 900;
+            line-height: 1;
+            margin: 1.5rem 0;
+            text-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.3);
+        }
+
+        .stat-label {
+            font-size: 1.5rem;
+            font-weight: 500;
+            opacity: 0.9;
+            text-align: center;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            opacity: 0.8;
+            margin-top: 1rem;
+            text-align: center;
+            max-width: 50rem;
+        }
+
+        .person-list {
+            list-style: none;
+            margin: 2rem 0;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        .person-list li {
+            margin: 0.75rem 0;
+            padding: 0.75rem 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 0.5rem;
+            backdrop-filter: blur(0.625rem);
+        }
+
+        .navigation {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 1rem;
+            z-index: 1000;
+        }
+
+        .nav-button {
+            padding: 0.75rem 2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 2rem;
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(0.625rem);
+        }
+
+        .nav-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.05);
+        }
+
+        .nav-button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .progress-dots {
+            position: fixed;
+            top: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 0.5rem;
+            z-index: 1000;
+        }
+
+        .dot {
+            width: 0.625rem;
+            height: 0.625rem;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .dot.active {
+            background: #fff;
+            transform: scale(1.3);
+        }
+
+        .emoji {
+            font-size: 5rem;
+            margin: 1rem 0;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 2rem;
+            font-size: 1rem;
+            margin-top: 1rem;
+            backdrop-filter: blur(0.625rem);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-1.25rem); }
+        }
+
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @media (max-width: 48rem) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 1.75rem;
+            }
+
+            .stat-number {
+                font-size: 4rem;
+            }
+
+            .stat-label {
+                font-size: 1.125rem;
+            }
+
+            .emoji {
+                font-size: 3rem;
+            }
+
+            .person-list {
+                font-size: 1.125rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-dots" id="progressDots"></div>
+
+    <div class="slide-container" id="slideContainer">
+        <!-- Slide 1: Welcome -->
+        <div class="slide active gradient-purple">
+            <div class="emoji floating">🎉</div>
+            <h1>SecurityPal<br>Wrapped 2025</h1>
+            <p class="subtitle">Your year in code, commits, and crushing it</p>
+        </div>
+
+        <!-- Slide 2: Total Commits -->
+        <div class="slide gradient-pink">
+            <h2>In 2025, the team shipped</h2>
+            <div class="stat-number">4,825</div>
+            <div class="stat-label">commits</div>
+            <p class="subtitle">That's an average of 13 commits per day! 🔥</p>
+        </div>
+
+        <!-- Slide 3: MVP - Jay OConnor -->
+        <div class="slide gradient-blue">
+            <div class="emoji">👑</div>
+            <h2>The Commit King</h2>
+            <h1 style="font-size: 3rem; margin: 2rem 0;">Jay OConnor</h1>
+            <div class="stat-number" style="font-size: 6rem;">910</div>
+            <div class="stat-label">commits</div>
+            <p class="subtitle">Nearly 19% of all commits! Absolute legend!</p>
+        </div>
+
+        <!-- Slide 4: Runner Up - Grant -->
+        <div class="slide gradient-orange">
+            <div class="emoji">🥈</div>
+            <h2>Silver Medal Goes To</h2>
+            <h1 style="font-size: 3rem; margin: 2rem 0;">Grant Audet</h1>
+            <div class="stat-number" style="font-size: 6rem;">592</div>
+            <div class="stat-label">commits</div>
+            <p class="subtitle">Crushing it with consistency!</p>
+        </div>
+
+        <!-- Slide 5: Top 5 -->
+        <div class="slide gradient-green">
+            <div class="emoji">🏆</div>
+            <h2>Top 5 Code Warriors</h2>
+            <ul class="person-list">
+                <li>🥇 Jay OConnor - 910 commits</li>
+                <li>🥈 Grant Audet - 592 commits</li>
+                <li>🥉 Sanjeev Bhusal - 358 commits</li>
+                <li>4️⃣ Saugat Poudel - 320 commits</li>
+                <li>5️⃣ Dinesh Ojha - 275 commits</li>
+            </ul>
+        </div>
+
+        <!-- Slide 6: Lines Added -->
+        <div class="slide gradient-red">
+            <h2>The team added</h2>
+            <div class="stat-number">559,581</div>
+            <div class="stat-label">lines of code</div>
+            <div class="emoji">🤯</div>
+            <p class="subtitle">And deleted 274,029 lines - keeping it clean!</p>
+        </div>
+
+        <!-- Slide 7: Language Battle -->
+        <div class="slide gradient-teal">
+            <h2>The Great Language War</h2>
+            <div style="display: flex; gap: 4rem; margin: 2rem 0; flex-wrap: wrap; justify-content: center;">
+                <div>
+                    <div class="emoji">📘</div>
+                    <div class="stat-number" style="font-size: 5rem;">10,519</div>
+                    <div class="stat-label">TypeScript files</div>
+                </div>
+                <div>
+                    <div class="emoji">🐍</div>
+                    <div class="stat-number" style="font-size: 5rem;">8,441</div>
+                    <div class="stat-label">Python files</div>
+                </div>
+            </div>
+            <p class="subtitle">TypeScript barely edges out Python this year!</p>
+        </div>
+
+        <!-- Slide 8: Bug Squashing -->
+        <div class="slide gradient-violet">
+            <div class="emoji">🔧</div>
+            <h2>Bug Squashing Champions</h2>
+            <div class="stat-number">576</div>
+            <div class="stat-label">commits with "fix" in the message</div>
+            <p class="subtitle">Keeping production stable like bosses!</p>
+        </div>
+
+        <!-- Slide 9: Feature Flags -->
+        <div class="slide gradient-gold">
+            <div class="emoji">🚩</div>
+            <h2>Feature Flag Warriors</h2>
+            <div class="stat-number">151</div>
+            <div class="stat-label">feature flag commits</div>
+            <p class="subtitle">Safely deploying features with confidence!</p>
+        </div>
+
+        <!-- Slide 10: EEPT Tickets -->
+        <div class="slide gradient-dark">
+            <div class="emoji">🎫</div>
+            <h2>EEPT Ticket Crushers</h2>
+            <div class="stat-number">197</div>
+            <div class="stat-label">EEPT tickets completed</div>
+            <p class="subtitle">From roadmap to reality! 🚀</p>
+        </div>
+
+        <!-- Slide 11: Tuesday Energy -->
+        <div class="slide gradient-indigo">
+            <div class="emoji">📅</div>
+            <h2>Tuesday Was THE Day</h2>
+            <div class="stat-number">895</div>
+            <div class="stat-label">commits on Tuesdays</div>
+            <p class="subtitle">Apparently Monday motivation carries over!</p>
+        </div>
+
+        <!-- Slide 12: Peak Hours -->
+        <div class="slide gradient-sunset">
+            <div class="emoji">⏰</div>
+            <h2>Peak Coding Hours</h2>
+            <ul class="person-list">
+                <li>🌟 2 PM - 481 commits</li>
+                <li>🌅 9 AM - 445 commits</li>
+                <li>☕ 10 AM - 444 commits</li>
+            </ul>
+            <p class="subtitle">Afternoon power hours for the win!</p>
+        </div>
+
+        <!-- Slide 13: September Surge -->
+        <div class="slide gradient-purple">
+            <div class="emoji">📊</div>
+            <h2>September Surge!</h2>
+            <div class="stat-number">544</div>
+            <div class="stat-label">commits in September</div>
+            <p class="subtitle">The most productive month of the year!</p>
+        </div>
+
+        <!-- Slide 14: Hot File -->
+        <div class="slide gradient-pink">
+            <div class="emoji">🔥</div>
+            <h2>Hottest File of 2025</h2>
+            <div class="stat-label">Most frequently changed file:</div>
+            <div class="stat-number" style="font-size: 1.75rem; margin: 2rem; max-width: 50rem; text-align: center;">
+                frontends/yarn.lock
+            </div>
+            <div class="stat-label">Changed 526 times!</div>
+            <p class="subtitle">This file has seen EVERYTHING 👀</p>
+        </div>
+
+        <!-- Slide 15: Files Changed -->
+        <div class="slide gradient-blue">
+            <div class="emoji">📁</div>
+            <h2>The Great File Shuffle</h2>
+            <div class="stat-number">23,689</div>
+            <div class="stat-label">files changed</div>
+            <p class="subtitle">Literally touching the entire codebase!</p>
+        </div>
+
+        <!-- Slide 16: The Wordsmith -->
+        <div class="slide gradient-orange">
+            <div class="emoji">📜</div>
+            <h2>The Wordsmith Award</h2>
+            <div class="stat-label">Longest commit message:</div>
+            <div class="stat-number" style="font-size: 1.25rem; margin: 2rem; max-width: 55rem; text-align: center; line-height: 1.4;">
+                "I have modified the test to fetch all notifications and assert that the correct notifications were created for both documents, regardless of the order they are returned in. This resolves the flaky test issue."
+            </div>
+            <p class="subtitle">When you need to explain ALL the things!</p>
+        </div>
+
+        <!-- Slide 17: PRs -->
+        <div class="slide gradient-green">
+            <div class="emoji">🔀</div>
+            <h2>Pull Request Masters</h2>
+            <div class="stat-number">4,817</div>
+            <div class="stat-label">unique PRs merged</div>
+            <p class="subtitle">Code review culture at its finest!</p>
+        </div>
+
+        <!-- Slide 18: The Dream Team -->
+        <div class="slide gradient-red">
+            <div class="emoji">👥</div>
+            <h2>The Dream Team</h2>
+            <p class="subtitle">20 amazing developers made 2025 incredible:</p>
+            <ul class="person-list" style="font-size: 1.125rem;">
+                <li>Jay OConnor (910) • Grant Audet (592)</li>
+                <li>Sanjeev Bhusal (358) • Saugat Poudel (320)</li>
+                <li>Dinesh Ojha (275) • nischalnayaju (251)</li>
+                <li>Andrew Lo (226) • Yu Song (141)</li>
+                <li>Ashish Thapa (135) • Ross (104)</li>
+                <li>Aanchal Adhikari (104) • Sungseo Park (84)</li>
+                <li>kartik-soni (73) • Brian Wong (71)</li>
+                <li>Prabhas Pokharel (56) • Aryak (41)</li>
+                <li>Jeff Harrison (37) • Michael Ibragimchayev (15)</li>
+                <li>Ankit Karki • karan1228 • and more!</li>
+            </ul>
+        </div>
+
+        <!-- Slide 19: Thank You -->
+        <div class="slide gradient-violet">
+            <div class="emoji floating">🙏</div>
+            <h1>Thank You!</h1>
+            <p class="subtitle">Here's to an amazing 2025 and an even better 2026!</p>
+            <div class="badge">Made with ❤️ by the SecurityPal team</div>
+        </div>
+    </div>
+
+    <div class="navigation">
+        <button class="nav-button" id="prevBtn" disabled>← Previous</button>
+        <button class="nav-button" id="nextBtn">Next →</button>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const progressDots = document.getElementById('progressDots');
+
+        // Create progress dots
+        slides.forEach((_, index) => {
+            const dot = document.createElement('div');
+            dot.className = 'dot';
+            if (index === 0) dot.classList.add('active');
+            progressDots.appendChild(dot);
+        });
+
+        const dots = document.querySelectorAll('.dot');
+
+        function updateSlide() {
+            slides.forEach((slide, index) => {
+                slide.classList.remove('active', 'exiting');
+                dots[index].classList.remove('active');
+
+                if (index === currentSlide) {
+                    slide.classList.add('active');
+                    dots[index].classList.add('active');
+                } else if (index < currentSlide) {
+                    slide.classList.add('exiting');
+                }
+            });
+
+            prevBtn.disabled = currentSlide === 0;
+            nextBtn.disabled = currentSlide === slides.length - 1;
+        }
+
+        prevBtn.addEventListener('click', () => {
+            if (currentSlide > 0) {
+                currentSlide--;
+                updateSlide();
+            }
+        });
+
+        nextBtn.addEventListener('click', () => {
+            if (currentSlide < slides.length - 1) {
+                currentSlide++;
+                updateSlide();
+            }
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                if (currentSlide < slides.length - 1) {
+                    currentSlide++;
+                    updateSlide();
+                }
+            } else if (e.key === 'ArrowLeft') {
+                if (currentSlide > 0) {
+                    currentSlide--;
+                    updateSlide();
+                }
+            }
+        });
+
+        // Touch/swipe support
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        document.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        document.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            if (touchEndX < touchStartX - 50 && currentSlide < slides.length - 1) {
+                currentSlide++;
+                updateSlide();
+            }
+            if (touchEndX > touchStartX + 50 && currentSlide > 0) {
+                currentSlide--;
+                updateSlide();
+            }
+        }
+    </script>
+</body>
+</html>
