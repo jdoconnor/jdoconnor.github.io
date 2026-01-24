@@ -144,7 +144,7 @@
 		</div>
 	</div>
 	<div class="timeline card reveal delay-7">
-		<p class="eyebrow">Signal log</p>
+		<p class="eyebrow">Timeline</p>
 		<ol>
 			{#each signals as signal}
 				<li>

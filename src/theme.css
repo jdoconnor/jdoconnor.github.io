@@ -1,3 +1,6 @@
+@config "../tailwind.config.js";
+@import "tailwindcss";
+
 /* Reset and base styles */
 * {
 	box-sizing: border-box;
@@ -61,6 +64,14 @@ html {
 	--card-bg: var(--surface);
 	--card-border: var(--surface-border);
 	--card-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+@theme {
+	--color-accent-primary: #8b5cf6;
+	--color-accent-secondary: #06b6d4;
+	--color-text-primary: #f8fafc;
+	--color-text-secondary: #cbd5e1;
+	--color-text-muted: #94a3b8;
 }
 
 /* Dark gradient background */
@@ -365,4 +376,87 @@ footer .icons a:hover svg {
 	@page {
 		margin: 0.5cm;
 	}
+}
+
+.blog-content h1 {
+	font-size: 1.875rem;
+	line-height: 2.25rem;
+	font-weight: 700;
+	margin-top: 2rem;
+	margin-bottom: 1rem;
+}
+
+.blog-content h2 {
+	font-size: 1.5rem;
+	line-height: 2rem;
+	font-weight: 700;
+	margin-top: 1.5rem;
+	margin-bottom: 0.75rem;
+}
+
+.blog-content h3 {
+	font-size: 1.25rem;
+	line-height: 1.75rem;
+	font-weight: 700;
+	margin-top: 1rem;
+	margin-bottom: 0.5rem;
+}
+
+.blog-content p {
+	margin-bottom: 1rem;
+	line-height: 1.625;
+}
+
+.blog-content ul,
+.blog-content ol {
+	margin-bottom: 1rem;
+	margin-left: 1.5rem;
+}
+
+.blog-content li {
+	margin-bottom: 0.5rem;
+}
+
+.blog-content a {
+	color: var(--accent-primary);
+	text-decoration: none;
+}
+
+.blog-content a:hover {
+	text-decoration: underline;
+}
+
+.blog-content pre {
+	background: rgba(30, 41, 59, 0.8);
+	padding: 1rem;
+	border-radius: 0.5rem;
+	margin-bottom: 1rem;
+	overflow-x: auto;
+}
+
+.blog-content code {
+	background: rgba(30, 41, 59, 0.8);
+	padding: 0.125rem 0.25rem;
+	border-radius: 0.25rem;
+	font-size: 0.875rem;
+}
+
+.blog-content pre code {
+	background: transparent;
+	padding: 0;
+}
+
+.blog-content blockquote {
+	border-left: 4px solid var(--accent-primary);
+	padding-left: 1rem;
+	font-style: italic;
+	margin: 1rem 0;
+}
+
+.blog-content strong {
+	font-weight: 700;
+}
+
+.blog-content em {
+	font-style: italic;
 }

@@ -139,13 +139,14 @@
 		border-radius: 999px;
 		mix-blend-mode: screen;
 		opacity: 0.85;
-		animation: float 16s ease-in-out infinite;
+		animation: float var(--orb-duration, 40s) ease-in-out infinite;
 	}
 
 	.orb-alpha {
 		top: 0;
 		left: 5%;
 		background: linear-gradient(145deg, rgba(59, 130, 246, 0.6), rgba(56, 189, 248, 0.35));
+		--orb-duration: 12s;
 	}
 
 	.orb-beta {
@@ -153,6 +154,7 @@
 		right: 8%;
 		background: linear-gradient(145deg, rgba(168, 85, 247, 0.55), rgba(236, 72, 153, 0.35));
 		animation-delay: 4s;
+		--orb-duration: 8s;
 	}
 
 	.orb-gamma {
@@ -160,6 +162,7 @@
 		left: 25%;
 		background: linear-gradient(145deg, rgba(16, 185, 129, 0.5), rgba(34, 197, 94, 0.35));
 		animation-delay: 7s;
+		--orb-duration: 52s;
 	}
 
 	.orb-delta {
@@ -167,6 +170,7 @@
 		right: 20%;
 		background: linear-gradient(145deg, rgba(14, 165, 233, 0.4), rgba(248, 113, 113, 0.3));
 		animation-delay: 10s;
+		--orb-duration: 58s;
 	}
 
 	.now-deck::before {
@@ -250,8 +254,14 @@
 		0% {
 			transform: translate3d(0, 0, 0) scale(1);
 		}
+		25% {
+			transform: translate3d(15px, -20px, 0) scale(1.02);
+		}
 		50% {
-			transform: translate3d(0, -25px, 0) scale(1.05);
+			transform: translate3d(-10px, -35px, 0) scale(1.05);
+		}
+		75% {
+			transform: translate3d(-25px, -15px, 0) scale(1.03);
 		}
 		100% {
 			transform: translate3d(0, 0, 0) scale(1);
