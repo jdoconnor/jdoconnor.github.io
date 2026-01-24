@@ -1,19 +1,19 @@
 <script lang="ts">
 	const nowProjects = [
 		{
-			title: "SecurityPal Platform",
-			detail: "Scaling the trust operating system teams rely on to close enterprise deals.",
+			title: "SecurityPal Concierge Agents",
+			detail: "Applied AI rollout pairing concierge agents with human QA for questionnaires and audits.",
+			status: "shipping",
+		},
+		{
+			title: "DogShitAI.com",
+			detail: "Edge-native pet tracking experiences built with SvelteKit, Turso, and Cloudflare.",
 			status: "in-flight",
 		},
 		{
-			title: "Leadership Coaching",
-			detail: "Mentoring product & eng leads navigating their first exec roles.",
+			title: "Rage Calculator",
+			detail: "Micro-app translating annual salary + days off into daily payout reality checks.",
 			status: "live",
-		},
-		{
-			title: "Writing Sprints",
-			detail: "Capturing systems for high-leverage builders on the blog & newsletter.",
-			status: "drafting",
 		},
 	];
 
@@ -32,7 +32,7 @@
 			label: "People & culture",
 			summary: "Growing teams that feel psychologically safe, ambitious, and accountable.",
 			link: {
-				href: "mailto:jaydoconnor@gmail.com",
+				href: "https://www.cal.com/jdoconnor",
 				text: "Work together",
 			},
 		},
@@ -85,7 +85,7 @@
 	<div class="hero-grid">
 		<div class="intro">
 			<p class="eyebrow reveal">Product & Engineering Leader</p>
-			<h1 class="reveal delay-1">Hi, I’m Jay O’Connor.</h1>
+			<h1 class="reveal delay-1">Hi, I’m Jay.</h1>
 			<p class="lede reveal delay-2">
 				I help high-velocity companies turn ambiguous problems into durable systems—and ship the work
 				their customers rave about.
@@ -99,22 +99,13 @@
 					<dt>Years growing teams</dt>
 					<dd>15+</dd>
 				</div>
-				<div>
-					<dt>Launches shipped</dt>
-					<dd>120+</dd>
-				</div>
-				<div>
-					<dt>Leaders coached</dt>
-					<dd>40+</dd>
-				</div>
 			</dl>
 		</div>
 		<div class="signal card glass reveal delay-5">
-			<p class="badge">Now signal</p>
+			<p class="badge">Current</p>
 			<ul class="now-list">
 				{#each nowProjects as project}
 					<li>
-						<span class="status">{project.status}</span>
 						<div>
 							<p class="title">{project.title}</p>
 							<p class="detail">{project.detail}</p>
@@ -122,7 +113,7 @@
 					</li>
 				{/each}
 			</ul>
-			<a class="btn inline" href="mailto:jaydoconnor@gmail.com">Invite me to collaborate →</a>
+			<a class="btn inline" href="https://www.cal.com/jdoconnor">Book time to discuss further →</a>
 		</div>
 	</div>
 </section>
