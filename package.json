@@ -40,5 +40,8 @@
 		"typescript": "^5.4.5",
 		"vite": "^5.2.11",
 		"vitest": "^0.32.4"
+	},
+	"dependencies": {
+		"lucide-svelte": "^0.563.0"
 	}
 }

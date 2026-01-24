@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { Award, CircuitBoard, Users } from "lucide-svelte";
+
 	const nowProjects = [
 		{
 			title: "SecurityPal Concierge Agents",
@@ -22,11 +24,13 @@
 			label: "Product leadership",
 			summary: "Clarity, ruthless prioritization, and crisp storytelling that align exec teams.",
 			link: { href: "/now", text: "See current work" },
+			icon: Award,
 		},
 		{
 			label: "Engineering strategy",
 			summary: "Systems thinking across platform, AI copilots, and dependable delivery.",
 			link: { href: "/blog", text: "Read essays" },
+			icon: CircuitBoard,
 		},
 		{
 			label: "People & culture",
@@ -35,6 +39,7 @@
 				href: "https://www.cal.com/jdoconnor",
 				text: "Work together",
 			},
+			icon: Users,
 		},
 	];
 
@@ -124,9 +129,16 @@
 		<div class="tracks">
 			{#each tracks as track}
 				<article>
-					<p class="label">{track.label}</p>
-					<p class="summary">{track.summary}</p>
-					<a href={track.link.href}>{track.link.text}</a>
+					<div class="track-head">
+						<span class="track-icon" aria-hidden="true">
+							<svelte:component this={track.icon} />
+						</span>
+						<div>
+							<p class="label">{track.label}</p>
+							<p class="summary">{track.summary}</p>
+						</div>
+					</div>
+					<a class="track-link" href={track.link.href}>{track.link.text}</a>
 				</article>
 			{/each}
 		</div>
@@ -386,16 +398,79 @@
 	}
 
 	.tracks {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-		gap: 2rem;
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+		height: 100%;
 	}
 
 	.tracks article {
-		padding: 1.5rem;
-		border-radius: 16px;
+		padding: 1.75rem;
+		border-radius: 20px;
 		border: 1px solid rgba(148, 163, 184, 0.3);
-		background: rgba(15, 23, 42, 0.35);
+		background: rgba(15, 23, 42, 0.45);
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+		flex: 1 1 auto;
+	}
+
+	.track-head {
+		display: grid;
+		grid-template-columns: auto minmax(0, 1fr);
+		gap: 1.5rem;
+		align-items: center;
+	}
+
+	.track-icon {
+		width: clamp(72px, 6vw, 88px);
+		height: clamp(72px, 6vw, 88px);
+		border-radius: 20px;
+		background: linear-gradient(135deg, rgba(34, 197, 94, 0.35), rgba(14, 165, 233, 0.25));
+		border: 1px solid rgba(148, 163, 184, 0.4);
+		display: grid;
+		place-items: center;
+		color: var(--text-primary);
+		box-shadow: 0 12px 30px rgba(15, 23, 42, 0.55);
+	}
+
+	.tracks article:nth-child(2) .track-icon {
+		background: linear-gradient(135deg, rgba(14, 165, 233, 0.32), rgba(99, 102, 241, 0.32));
+	}
+
+	.tracks article:nth-child(3) .track-icon {
+		background: linear-gradient(135deg, rgba(236, 72, 153, 0.32), rgba(139, 92, 246, 0.32));
+	}
+
+	.track-icon :global(svg) {
+		width: 42px;
+		height: 42px;
+		stroke: currentColor;
+		stroke-width: 2;
+	}
+
+	.tracks article:nth-child(1) {
+		background: linear-gradient(160deg, rgba(16, 185, 129, 0.15), rgba(59, 130, 246, 0.08)), rgba(15, 23, 42, 0.5);
+		border-color: rgba(16, 185, 129, 0.35);
+	}
+
+	.tracks article:nth-child(2) {
+		background: linear-gradient(160deg, rgba(14, 165, 233, 0.18), rgba(99, 102, 241, 0.1)), rgba(15, 23, 42, 0.5);
+		border-color: rgba(99, 102, 241, 0.35);
+	}
+
+	.tracks article:nth-child(3) {
+		background: linear-gradient(160deg, rgba(236, 72, 153, 0.18), rgba(251, 191, 36, 0.08)), rgba(15, 23, 42, 0.5);
+		border-color: rgba(236, 72, 153, 0.35);
+	}
+
+	.track-link {
+		color: var(--link-color);
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		margin-top: auto;
+		align-self: flex-start;
 	}
 
 	.label {
@@ -407,13 +482,9 @@
 		color: var(--text-muted);
 	}
 
-	.summary {
-		margin-bottom: 1.2rem;
-	}
-
-	.tracks a {
-		color: var(--link-color);
-		font-weight: 600;
+	.tracks .summary {
+		margin: 0;
+		color: var(--text-secondary);
 	}
 
 	.timeline {
