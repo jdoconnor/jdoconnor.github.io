@@ -14,7 +14,7 @@
 </script>
 
 <div class="max-w-4xl mx-auto">
-	<h1 class="h1 gradient-text mb-8">Blog</h1>
+	<h1 class="h1 gradient-text mb-8">Musings</h1>
 
 	<div class="space-y-6">
 		{#each data.posts as post}
