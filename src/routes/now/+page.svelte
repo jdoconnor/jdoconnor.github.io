@@ -98,6 +98,28 @@
 			]}
 			link="/rage"
 		/>
+		<ProjectCard
+			title="Terminal 0"
+			description="Terminal 0 is a multiplayer airport bingo game that turns layovers into collaborative hunts for real-world terminal happenings."
+			tech={[
+				{
+					name: "Cloudflare Workers",
+					tooltip: "Edge runtime keeps every bingo call low-latency worldwide",
+					color: "primary-content",
+				},
+				{
+					name: "Durable Objects",
+					tooltip: "Stateful lobbies keep multiplayer boards perfectly in sync",
+					color: "secondary",
+				},
+				{
+					name: "Mobile-first UI",
+					tooltip: "Layout and controls optimized for on-the-go travelers",
+					color: "neutral",
+				},
+			]},
+			link="https://terminal0.jayooconnor.com"
+		/>
 	</div>
 </section>
 
