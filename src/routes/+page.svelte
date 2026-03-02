@@ -231,7 +231,8 @@
 
 	.eyebrow {
 		font-size: 1.2rem;
-		letter-spacing: 0.2rem;
+		font-weight: 600;
+		letter-spacing: 0.15em;
 		text-transform: uppercase;
 		color: var(--text-muted);
 		margin-bottom: 1rem;
@@ -239,6 +240,7 @@
 
 	.lede {
 		font-size: 1.8rem;
+		line-height: 1.65;
 		color: var(--text-secondary);
 		max-width: 60ch;
 		margin-bottom: 2rem;
@@ -253,11 +255,12 @@
 
 	.btn {
 		border-radius: 999px;
-		padding: 0.85rem 2.4rem;
+		padding: 0.9rem 2.4rem;
 		font-weight: 600;
-		font-size: 1.4rem;
+		font-size: 1.5rem;
 		transition: transform 0.25s ease, box-shadow 0.25s ease;
 		text-decoration: none;
+		display: inline-block;
 	}
 
 	.btn.primary {
@@ -294,13 +297,18 @@
 
 	.metrics dt {
 		font-size: 1.2rem;
+		font-weight: 500;
 		color: var(--text-muted);
-		margin-bottom: 0.3rem;
+		margin-bottom: 0.4rem;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
 	}
 
 	.metrics dd {
-		font-size: 2rem;
+		font-size: 2.4rem;
+		font-weight: 700;
 		margin: 0;
+		color: var(--text-primary);
 	}
 
 	.signal {
@@ -349,9 +357,10 @@
 
 	.badge {
 		font-size: 1.2rem;
+		font-weight: 600;
 		color: var(--text-muted);
 		text-transform: uppercase;
-		letter-spacing: 0.2em;
+		letter-spacing: 0.15em;
 		margin-bottom: 1.5rem;
 	}
 
@@ -369,24 +378,18 @@
 		gap: 1rem;
 	}
 
-	.status {
-		font-family: "IBM Plex Mono", "Space Grotesk", sans-serif;
-		border: 1px solid rgba(255, 255, 255, 0.3);
-		border-radius: 999px;
-		padding: 0.35rem 1.1rem;
-		text-transform: uppercase;
-		font-size: 1.1rem;
-		align-self: flex-start;
-	}
-
 	.now-list .title,
 	.timeline .title {
+		font-size: 1.7rem;
 		font-weight: 600;
-		margin: 0 0 0.3rem 0;
+		margin: 0 0 0.4rem 0;
+		color: var(--text-primary);
 	}
 
 	.detail {
 		margin: 0;
+		font-size: 1.5rem;
+		line-height: 1.65;
 		color: var(--text-secondary);
 	}
 
@@ -476,14 +479,17 @@
 	.label {
 		font-family: "IBM Plex Mono", "Space Grotesk", sans-serif;
 		font-size: 1.2rem;
+		font-weight: 600;
 		text-transform: uppercase;
-		letter-spacing: 0.12em;
+		letter-spacing: 0.1em;
 		margin-bottom: 0.8rem;
 		color: var(--text-muted);
 	}
 
 	.tracks .summary {
 		margin: 0;
+		font-size: 1.6rem;
+		line-height: 1.65;
 		color: var(--text-secondary);
 	}
 
@@ -517,7 +523,8 @@
 
 	.timeline .date {
 		font-size: 1.2rem;
-		letter-spacing: 0.2em;
+		font-weight: 500;
+		letter-spacing: 0.1em;
 		text-transform: uppercase;
 		color: var(--text-muted);
 		margin-bottom: 0.5rem;

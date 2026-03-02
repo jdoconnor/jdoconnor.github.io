@@ -130,9 +130,10 @@
 
 	.brand-caption {
 		display: block;
-		font-size: 1.2rem;
+		font-size: 1.1rem;
+		font-weight: 500;
 		color: var(--text-muted);
-		letter-spacing: 0.2em;
+		letter-spacing: 0.15em;
 		text-transform: uppercase;
 	}
 
@@ -150,7 +151,8 @@
 		border-radius: 999px;
 		text-transform: uppercase;
 		font-size: 1.2rem;
-		letter-spacing: 0.14em;
+		font-weight: 600;
+		letter-spacing: 0.1em;
 		color: var(--text-secondary);
 		transition: color 0.3s ease, background 0.3s ease, transform 0.3s ease;
 	}
@@ -187,10 +189,11 @@
 		color: var(--text-primary);
 		font-weight: 600;
 		text-transform: uppercase;
-		letter-spacing: 0.16em;
+		letter-spacing: 0.1em;
 		font-size: 1.2rem;
 		box-shadow: 0 12px 32px rgba(14, 165, 233, 0.35);
 		transition: transform 0.25s ease, box-shadow 0.25s ease;
+		text-decoration: none;
 	}
 
 	.cta:hover {

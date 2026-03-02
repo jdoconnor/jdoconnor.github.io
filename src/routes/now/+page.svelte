@@ -10,7 +10,7 @@
 		<div class="orb orb-delta"></div>
 	</div>
 	<header class="now-hero">
-		<p class="timestamp">Now · Updated May 13, 2024</p>
+		<p class="timestamp">Now · Updated March 1, 2026</p>
 		<h1 id="now-title">What I'm building for 2026</h1>
 		<p class="hero-lede">
 			Cultivating applied AI systems, autonomous tooling, and human-in-the-loop experiences that feel
@@ -25,7 +25,7 @@
 	<div class="projects-grid">
 		<ProjectCard
 			image="/pottytracker_app.jpg"
-			description="A progeressive web app for tracking your dog's potty times with the rest of your family"
+			description="A progressive web app for tracking your dog's potty times with the rest of your family"
 			title="DogShitAI.com"
 			tech={[
 				{
@@ -117,7 +117,7 @@
 					tooltip: "Layout and controls optimized for on-the-go travelers",
 					color: "neutral",
 				},
-			]},
+			]}
 			link="https://terminal0.jayooconnor.com"
 		/>
 	</div>
@@ -220,7 +220,8 @@
 
 	.timestamp {
 		font-size: 1.2rem;
-		letter-spacing: 0.3em;
+		font-weight: 500;
+		letter-spacing: 0.2em;
 		text-transform: uppercase;
 		color: rgba(248, 250, 252, 0.7);
 	}
@@ -233,7 +234,8 @@
 	}
 
 	.hero-lede {
-		font-size: clamp(1.4rem, 3vw, 1.9rem);
+		font-size: clamp(1.6rem, 3vw, 2rem);
+		line-height: 1.65;
 		color: rgba(229, 231, 235, 0.9);
 		max-width: 60ch;
 		margin: 0;
@@ -247,9 +249,10 @@
 
 	.signal-band span {
 		font-size: 1.2rem;
+		font-weight: 600;
 		letter-spacing: 0.08em;
 		text-transform: uppercase;
-		padding: 0.4rem 1.4rem;
+		padding: 0.5rem 1.5rem;
 		border-radius: 999px;
 		background: rgba(15, 118, 110, 0.15);
 		border: 1px solid rgba(16, 185, 129, 0.3);

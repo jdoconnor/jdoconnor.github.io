@@ -80,6 +80,8 @@
 	}
 
 	.lede {
+		font-size: 1.8rem;
+		line-height: 1.65;
 		color: var(--text-secondary);
 		max-width: 60ch;
 		margin-bottom: 2rem;
