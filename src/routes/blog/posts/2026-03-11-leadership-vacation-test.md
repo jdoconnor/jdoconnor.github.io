@@ -25,7 +25,7 @@ At any given point in time—regardless of the company's stage—a successful le
 ### Measuring in Sprints
 In the software world, we can translate this "three-week rule" into the cadence of development.
 
-A healthy, empowered engineering organization should be structured so that **any individual** can miss one and a half to two full sprints at any time. If the sprint goals are met, the velocity remains consistent, and the quality of output doesn't degrade, you have achieved a high-functioning state of continuity.
+A healthy, empowered engineering organization should be structured so that **any individual** can miss one and a half to two full sprints at any time. If the sprint goals are met, the velocity remains relatively consistent, and the quality of output doesn't degrade, you have achieved a high-functioning state of continuity.
 
 ### The Objective
 Leadership isn't about being the hero who saves the day; it's about building a system that doesn't need a hero.
