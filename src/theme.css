@@ -49,7 +49,7 @@ html {
 	--sky-500: #3083b4;
 
 	/* Warm neutrals */
-	--warm-50:  #fefcf8;
+	--warm-50: #fefcf8;
 	--warm-100: #f9f6f0;
 	--warm-200: #f0ece4;
 	--warm-300: #e2dbd0;
@@ -320,14 +320,29 @@ footer .icons a:hover svg {
 }
 
 @keyframes gradient-shift {
-	0% { background-position: 0% 50%; }
-	50% { background-position: 100% 50%; }
-	100% { background-position: 0% 50%; }
+	0% {
+		background-position: 0% 50%;
+	}
+
+	50% {
+		background-position: 100% 50%;
+	}
+
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
 @keyframes fade-in {
-	0% { opacity: 0; transform: translateY(20px); }
-	100% { opacity: 1; transform: translateY(0); }
+	0% {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }
 
 .fade-in {

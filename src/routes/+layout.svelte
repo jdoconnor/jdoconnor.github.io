@@ -31,9 +31,9 @@
 	<header class="site-header" aria-label="Primary">
 		<div class="nav-card">
 			<a class="brand" href="/">
-				<span class="brand-mark" aria-hidden="true">J•O</span>
+				<span class="brand-mark" aria-hidden="true">JO</span>
 				<div class="brand-copy">
-					<span class="brand-name">Jay O'Connor</span>
+					<span class="brand-name">Jay OConnor</span>
 					<span class="brand-caption">Engineering × Product</span>
 				</div>
 			</a>

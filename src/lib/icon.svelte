@@ -17,6 +17,6 @@
 		fill: var(--dark-link-color);
 	}
 	a:hover {
-		fill: var(--link-color);
+		/* fill: var(--link-color); */
 	}
 </style>

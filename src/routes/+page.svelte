@@ -4,16 +4,19 @@
 	const nowProjects = [
 		{
 			title: "SecurityPal Concierge Agents",
+			href: "https://securitypal.com",
 			detail: "Applied AI rollout pairing concierge agents with human QA for questionnaires and audits.",
 			status: "shipping",
 		},
 		{
 			title: "DogShitAI.com",
+			href: "https://dogshitai.com",
 			detail: "Edge-native pet tracking experiences built with SvelteKit, Turso, and Cloudflare.",
 			status: "in-flight",
 		},
 		{
 			title: "Rage Calculator",
+			href: "https://jayoconnor.com/rage",
 			detail: "Micro-app translating annual salary + days off into daily payout reality checks.",
 			status: "live",
 		},
@@ -96,37 +99,43 @@
 				their customers rave about.
 			</p>
 			<div class="hero-actions reveal delay-3">
-				<a class="btn primary" href="/now">What I'm building</a>
-				<a class="btn ghost" href="/blog">Read the latest essays</a>
+				<a class="btn primary" href="/now">What I'm working on</a>
+				<a class="btn ghost" href="/blog">Read my writing</a>
 			</div>
 			<dl class="metrics reveal delay-4">
-				<div>
+								<div>
+					<dt>Years in tech</dt>
+					<dd>25+</dd>
+				</div>
+								<div>
 					<dt>Years growing teams</dt>
 					<dd>15+</dd>
 				</div>
+
 			</dl>
 		</div>
 		<div class="signal card glass reveal delay-5">
-			<p class="badge">Current</p>
+			<p class="badge">Right now</p>
 			<ul class="now-list">
 				{#each nowProjects as project}
 					<li>
 						<span class="dot dot--{project.status}"></span>
 						<div>
-							<p class="title">{project.title}</p>
+							<p class="title">
+								<a href={project.href} target="_blank">{project.title}</a>
+							</p>
 							<p class="detail">{project.detail}</p>
 						</div>
 					</li>
 				{/each}
 			</ul>
-			<a class="btn inline" href="https://www.cal.com/jdoconnor">Book time to discuss further →</a>
+			<a class="btn inline" href="https://www.cal.com/jdoconnor">Let's chat →</a>
 		</div>
 	</div>
 </section>
 
 <section class="streams">
 	<div class="panel card reveal delay-6">
-		<p class="eyebrow">Focus tracks</p>
 		<div class="tracks">
 			{#each tracks as track}
 				<article class="track-{track.color}">
@@ -145,7 +154,7 @@
 		</div>
 	</div>
 	<div class="timeline card reveal delay-7">
-		<p class="eyebrow">Timeline</p>
+		<p class="eyebrow">Journey</p>
 		<ol>
 			{#each signals as signal}
 				<li>
