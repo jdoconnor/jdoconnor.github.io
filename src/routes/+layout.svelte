@@ -33,7 +33,7 @@
 			<a class="brand" href="/">
 				<span class="brand-mark" aria-hidden="true">J•O</span>
 				<div class="brand-copy">
-					<span class="brand-name">Jay O’Connor</span>
+					<span class="brand-name">Jay O'Connor</span>
 					<span class="brand-caption">Engineering × Product</span>
 				</div>
 			</a>
@@ -88,18 +88,19 @@
 		top: 0;
 		z-index: 50;
 		margin-bottom: 3rem;
+		padding-top: 1.2rem;
 	}
 
 	.nav-card {
 		display: flex;
 		align-items: center;
 		gap: 2rem;
-		padding: 1.2rem 1.6rem;
-		border-radius: 18px;
-		border: 1px solid rgba(148, 163, 184, 0.35);
-		background: rgba(15, 23, 42, 0.82);
-		box-shadow: 0 25px 65px rgba(2, 6, 23, 0.65);
-		backdrop-filter: blur(18px);
+		padding: 1rem 1.6rem;
+		border-radius: 20px;
+		border: 1px solid rgba(226, 219, 208, 0.9);
+		background: rgba(254, 252, 248, 0.88);
+		box-shadow: 0 4px 32px rgba(100, 80, 60, 0.1);
+		backdrop-filter: blur(20px);
 	}
 
 	.brand {
@@ -115,31 +116,32 @@
 		border-radius: 14px;
 		display: grid;
 		place-items: center;
-		font-weight: 600;
+		font-weight: 700;
 		letter-spacing: 0.05em;
-		background: linear-gradient(130deg, var(--accent-primary), var(--accent-secondary));
-		color: var(--text-primary);
+		background: linear-gradient(130deg, #bba8f5, #79ccaa);
+		color: #fff;
+		font-size: 1.3rem;
 	}
 
 	.brand-name {
 		font-size: 1.6rem;
-		font-weight: 600;
-		letter-spacing: 0.04em;
-		text-transform: uppercase;
+		font-weight: 700;
+		letter-spacing: 0.02em;
+		color: var(--warm-900);
 	}
 
 	.brand-caption {
 		display: block;
 		font-size: 1.1rem;
 		font-weight: 500;
-		color: var(--text-muted);
-		letter-spacing: 0.15em;
+		color: var(--warm-500);
+		letter-spacing: 0.12em;
 		text-transform: uppercase;
 	}
 
 	.primary-nav {
 		display: flex;
-		gap: 1.2rem;
+		gap: 0.5rem;
 		flex: 1;
 		justify-content: center;
 		flex-wrap: wrap;
@@ -147,58 +149,46 @@
 
 	.primary-nav a {
 		position: relative;
-		padding: 0.6rem 1.2rem;
+		padding: 0.6rem 1.4rem;
 		border-radius: 999px;
 		text-transform: uppercase;
 		font-size: 1.2rem;
 		font-weight: 600;
-		letter-spacing: 0.1em;
-		color: var(--text-secondary);
-		transition: color 0.3s ease, background 0.3s ease, transform 0.3s ease;
-	}
-
-	.primary-nav a::after {
-		content: "";
-		position: absolute;
-		inset: 0;
-		border-radius: inherit;
-		background: linear-gradient(130deg, var(--accent-primary), transparent 80%);
-		opacity: 0;
-		transition: opacity 0.3s ease;
-		z-index: -1;
+		letter-spacing: 0.08em;
+		color: var(--warm-600);
+		transition: color 0.25s ease, background 0.25s ease, transform 0.25s ease;
+		text-decoration: none;
 	}
 
 	.primary-nav a:hover {
-		color: var(--text-primary);
+		color: var(--lavender-500);
+		background: var(--lavender-50);
 		transform: translateY(-1px);
 	}
 
 	.primary-nav a.selected {
-		color: var(--text-primary);
-		background: rgba(99, 102, 241, 0.15);
-	}
-
-	.primary-nav a.selected::after {
-		opacity: 1;
+		color: var(--lavender-500);
+		background: var(--lavender-100);
 	}
 
 	.cta {
-		padding: 0.85rem 1.8rem;
+		padding: 0.8rem 1.8rem;
 		border-radius: 999px;
-		background: linear-gradient(120deg, var(--accent-primary), var(--accent-secondary));
-		color: var(--text-primary);
-		font-weight: 600;
+		background: linear-gradient(120deg, #bba8f5, #79ccaa);
+		color: #fff;
+		font-weight: 700;
 		text-transform: uppercase;
-		letter-spacing: 0.1em;
+		letter-spacing: 0.08em;
 		font-size: 1.2rem;
-		box-shadow: 0 12px 32px rgba(14, 165, 233, 0.35);
+		box-shadow: 0 6px 20px rgba(155, 125, 232, 0.3);
 		transition: transform 0.25s ease, box-shadow 0.25s ease;
 		text-decoration: none;
 	}
 
 	.cta:hover {
 		transform: translateY(-2px);
-		box-shadow: 0 20px 40px rgba(14, 165, 233, 0.45);
+		box-shadow: 0 12px 30px rgba(155, 125, 232, 0.4);
+		color: #fff;
 	}
 
 	@media (max-width: 960px) {
