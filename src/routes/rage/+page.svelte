@@ -91,7 +91,7 @@
 		: '';
 	$: headline = formattedDailyRate
 		? `I know your day sucked, but you still made ${formattedDailyRate} today.`
-		: 'Tell me about your year and I'll keep score for you.';
+		: "Tell me about your year and I'll keep score for you.";
 	$: subline = formattedDailyRate
 		? `Across roughly ${workingDays.toLocaleString()} working days, that's what your grit is worth.`
 		: 'Drop in a few numbers and I will do the emotional accounting for you.';
