@@ -25,14 +25,19 @@
 	];
 </script>
 
-<section class="card fade-in past-shell">
-	<div class="orb orb-1" aria-hidden="true"></div>
-	<div class="orb orb-2" aria-hidden="true"></div>
-	<div class="orb orb-3" aria-hidden="true"></div>
-	<h1 class="h1 gradient-text">Past projects</h1>
-	<p class="lede">
-		Archived experiments, prototypes, and tools that shaped how I build today.
-	</p>
+<section class="fade-in past-shell">
+	<div class="petal petal-1" aria-hidden="true"></div>
+	<div class="petal petal-2" aria-hidden="true"></div>
+	<div class="petal petal-3" aria-hidden="true"></div>
+
+	<header class="past-header">
+		<p class="eyebrow">Archive</p>
+		<h1 class="h1 gradient-text">Past projects</h1>
+		<p class="lede">
+			Archived experiments, prototypes, and tools that shaped how I build today.
+		</p>
+	</header>
+
 	<div class="grid">
 		{#each pastProjects as project}
 			<ProjectCard {...project} />
@@ -45,51 +50,86 @@
 		position: relative;
 		overflow: hidden;
 		padding: clamp(2rem, 4vw, 4rem);
-		gap: 2rem;
-		background: radial-gradient(circle at 15% 10%, rgba(56, 189, 248, 0.2), transparent 40%),
-			radial-gradient(circle at 85% 20%, rgba(168, 85, 247, 0.15), transparent 50%),
-			var(--card-bg);
+		border-radius: 24px;
+		background: linear-gradient(135deg, #fff4ee 0%, #f5f0ff 55%, #edfaf3 100%);
+		border: 1px solid var(--warm-200);
+		box-shadow: 0 4px 24px rgba(100, 80, 60, 0.07);
 	}
 
-	.orb {
+	.petal {
 		position: absolute;
-		width: clamp(180px, 30vw, 320px);
-		height: clamp(180px, 30vw, 320px);
 		border-radius: 50%;
-		filter: blur(40px);
-		opacity: 0.85;
-		mix-blend-mode: screen;
+		filter: blur(38px);
+		opacity: 0.45;
+		mix-blend-mode: multiply;
+		pointer-events: none;
 	}
 
-	.orb-1 {
+	.petal-1 {
+		width: clamp(160px, 26vw, 300px);
+		height: clamp(160px, 26vw, 300px);
 		top: -60px;
 		left: -40px;
-		background: linear-gradient(135deg, rgba(56, 189, 248, 0.55), rgba(14, 165, 233, 0.25));
+		background: radial-gradient(circle, #d9ccff, #bba8f5);
+		animation: drift-slow 22s ease-in-out infinite;
 	}
 
-	.orb-2 {
-		bottom: -80px;
-		left: 20%;
-		background: linear-gradient(135deg, rgba(34, 197, 94, 0.4), rgba(16, 185, 129, 0.25));
+	.petal-2 {
+		width: clamp(130px, 22vw, 260px);
+		height: clamp(130px, 22vw, 260px);
+		bottom: -70px;
+		left: 22%;
+		background: radial-gradient(circle, #a8e4c4, #79ccaa);
+		animation: drift-slow 30s ease-in-out infinite reverse;
+		animation-delay: 5s;
 	}
 
-	.orb-3 {
+	.petal-3 {
+		width: clamp(120px, 18vw, 240px);
+		height: clamp(120px, 18vw, 240px);
 		top: 10%;
-		right: -120px;
-		background: linear-gradient(135deg, rgba(168, 85, 247, 0.4), rgba(236, 72, 153, 0.3));
+		right: -80px;
+		background: radial-gradient(circle, #f8c9a6, #f0a878);
+		animation: drift-slow 26s ease-in-out infinite;
+		animation-delay: 10s;
+	}
+
+	.past-header {
+		position: relative;
+		z-index: 1;
+		margin-bottom: 2.5rem;
+	}
+
+	.eyebrow {
+		font-size: 1.2rem;
+		font-weight: 700;
+		letter-spacing: 0.18em;
+		text-transform: uppercase;
+		color: var(--peach-400);
+		margin-bottom: 0.5rem;
 	}
 
 	.lede {
 		font-size: 1.8rem;
 		line-height: 1.65;
-		color: var(--text-secondary);
+		color: var(--warm-700) !important;
 		max-width: 60ch;
-		margin-bottom: 2rem;
+		margin-top: 0.75rem;
+		margin-bottom: 0;
 	}
 
 	.grid {
+		position: relative;
+		z-index: 1;
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-		gap: 2.4rem;
+		gap: 2rem;
+	}
+
+	@keyframes drift-slow {
+		0% { transform: translate(0, 0) scale(1); }
+		40% { transform: translate(3%, 6%) scale(1.05); }
+		70% { transform: translate(-4%, -3%) scale(0.97); }
+		100% { transform: translate(0, 0) scale(1); }
 	}
 </style>

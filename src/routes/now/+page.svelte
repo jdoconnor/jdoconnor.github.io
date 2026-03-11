@@ -3,11 +3,11 @@
 </script>
 
 <section class="now-deck fade-in" aria-labelledby="now-title">
-	<div class="orb-cloud" aria-hidden="true">
-		<div class="orb orb-alpha"></div>
-		<div class="orb orb-beta"></div>
-		<div class="orb orb-gamma"></div>
-		<div class="orb orb-delta"></div>
+	<div class="petal-cloud" aria-hidden="true">
+		<div class="petal petal-alpha"></div>
+		<div class="petal petal-beta"></div>
+		<div class="petal petal-gamma"></div>
+		<div class="petal petal-delta"></div>
 	</div>
 	<header class="now-hero">
 		<p class="timestamp">Now · Updated March 1, 2026</p>
@@ -17,9 +17,9 @@
 			bespoke—even as they scale.
 		</p>
 		<div class="signal-band" role="list">
-			<span role="listitem">Applied AI</span>
-			<span role="listitem">Edge-native apps</span>
-			<span role="listitem">Trust automation</span>
+			<span role="listitem" class="tag tag--mint">Applied AI</span>
+			<span role="listitem" class="tag tag--lavender">Edge-native apps</span>
+			<span role="listitem" class="tag tag--peach">Trust automation</span>
 		</div>
 	</header>
 	<div class="projects-grid">
@@ -124,88 +124,69 @@
 </section>
 
 <style>
-	:global(body) {
-		background-color: #030712;
-	}
-
 	.now-deck {
 		position: relative;
 		padding: clamp(2rem, 4vw, 4.5rem);
-		border-radius: 32px;
-		background: radial-gradient(circle at 12% 20%, rgba(56, 189, 248, 0.25), transparent 45%),
-			radial-gradient(circle at 80% 0%, rgba(168, 85, 247, 0.2), transparent 60%),
-			rgba(4, 7, 15, 0.9);
-		box-shadow: 0 20px 60px rgba(2, 6, 23, 0.65);
+		border-radius: 28px;
+		background: linear-gradient(135deg, #f5f0ff 0%, #edfaf3 50%, #fff4ee 100%);
+		border: 1px solid var(--warm-200);
+		box-shadow: 0 8px 40px rgba(100, 80, 60, 0.08);
 		overflow: hidden;
 	}
 
-	.now-deck::before,
-	.now-deck::after {
-		content: "";
-		position: absolute;
-		inset: 0;
-		pointer-events: none;
-	}
-
-	.orb-cloud {
+	.petal-cloud {
 		position: absolute;
 		inset: -10% -5% auto -5%;
 		z-index: 0;
-		filter: blur(20px);
+		pointer-events: none;
 	}
 
-	.orb {
+	.petal {
 		position: absolute;
-		width: clamp(160px, 22vw, 320px);
-		height: clamp(160px, 22vw, 320px);
 		border-radius: 999px;
-		mix-blend-mode: screen;
-		opacity: 0.85;
-		animation: float var(--orb-duration, 40s) ease-in-out infinite;
+		filter: blur(30px);
+		opacity: 0.5;
+		mix-blend-mode: multiply;
+		animation: float var(--petal-dur, 40s) ease-in-out infinite;
 	}
 
-	.orb-alpha {
+	.petal-alpha {
+		width: clamp(140px, 20vw, 280px);
+		height: clamp(140px, 20vw, 280px);
 		top: 0;
 		left: 5%;
-		background: linear-gradient(145deg, rgba(59, 130, 246, 0.6), rgba(56, 189, 248, 0.35));
-		--orb-duration: 12s;
+		background: radial-gradient(circle, #d9ccff, #bba8f5);
+		--petal-dur: 14s;
 	}
 
-	.orb-beta {
-		top: 20%;
+	.petal-beta {
+		width: clamp(100px, 16vw, 220px);
+		height: clamp(100px, 16vw, 220px);
+		top: 15%;
 		right: 8%;
-		background: linear-gradient(145deg, rgba(168, 85, 247, 0.55), rgba(236, 72, 153, 0.35));
+		background: radial-gradient(circle, #f8c9a6, #f0a878);
 		animation-delay: 4s;
-		--orb-duration: 8s;
+		--petal-dur: 10s;
 	}
 
-	.orb-gamma {
+	.petal-gamma {
+		width: clamp(120px, 18vw, 250px);
+		height: clamp(120px, 18vw, 250px);
 		bottom: -5%;
 		left: 25%;
-		background: linear-gradient(145deg, rgba(16, 185, 129, 0.5), rgba(34, 197, 94, 0.35));
+		background: radial-gradient(circle, #a8e4c4, #79ccaa);
 		animation-delay: 7s;
-		--orb-duration: 52s;
+		--petal-dur: 48s;
 	}
 
-	.orb-delta {
-		bottom: -15%;
-		right: 20%;
-		background: linear-gradient(145deg, rgba(14, 165, 233, 0.4), rgba(248, 113, 113, 0.3));
+	.petal-delta {
+		width: clamp(100px, 14vw, 200px);
+		height: clamp(100px, 14vw, 200px);
+		bottom: -10%;
+		right: 18%;
+		background: radial-gradient(circle, #fddde7, #f9bad0);
 		animation-delay: 10s;
-		--orb-duration: 58s;
-	}
-
-	.now-deck::before {
-		background: conic-gradient(from 120deg, rgba(14, 165, 233, 0.25), rgba(236, 72, 153, 0.2), rgba(34, 197, 94, 0.15));
-		opacity: 0.4;
-		filter: blur(140px);
-	}
-
-	.now-deck::after {
-		border: 1px solid rgba(148, 163, 184, 0.2);
-		border-radius: inherit;
-		mix-blend-mode: screen;
-		box-shadow: inset 0 0 40px rgba(255, 255, 255, 0.04);
+		--petal-dur: 38s;
 	}
 
 	.now-hero {
@@ -215,28 +196,27 @@
 		flex-direction: column;
 		gap: 1.25rem;
 		padding-bottom: 2.5rem;
-		border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+		border-bottom: 1px solid var(--warm-200);
 	}
 
 	.timestamp {
 		font-size: 1.2rem;
-		font-weight: 500;
+		font-weight: 600;
 		letter-spacing: 0.2em;
 		text-transform: uppercase;
-		color: rgba(248, 250, 252, 0.7);
+		color: var(--warm-500) !important;
 	}
 
 	.now-hero h1 {
 		font-size: clamp(2.8rem, 6vw, 4.6rem);
 		margin: 0;
-		color: #f8fafc;
-		text-shadow: 0 0 20px rgba(56, 189, 248, 0.5);
+		color: var(--warm-900) !important;
 	}
 
 	.hero-lede {
 		font-size: clamp(1.6rem, 3vw, 2rem);
 		line-height: 1.65;
-		color: rgba(229, 231, 235, 0.9);
+		color: var(--warm-700) !important;
 		max-width: 60ch;
 		margin: 0;
 	}
@@ -247,17 +227,31 @@
 		flex-wrap: wrap;
 	}
 
-	.signal-band span {
+	.tag {
 		font-size: 1.2rem;
-		font-weight: 600;
-		letter-spacing: 0.08em;
+		font-weight: 700;
+		letter-spacing: 0.06em;
 		text-transform: uppercase;
-		padding: 0.5rem 1.5rem;
+		padding: 0.5rem 1.4rem;
 		border-radius: 999px;
-		background: rgba(15, 118, 110, 0.15);
-		border: 1px solid rgba(16, 185, 129, 0.3);
-		color: #a7f3d0;
-		box-shadow: 0 8px 20px rgba(16, 185, 129, 0.25);
+	}
+
+	.tag--mint {
+		background: var(--mint-100);
+		border: 1.5px solid var(--mint-300);
+		color: var(--mint-500);
+	}
+
+	.tag--lavender {
+		background: var(--lavender-100);
+		border: 1.5px solid var(--lavender-300);
+		color: var(--lavender-500);
+	}
+
+	.tag--peach {
+		background: var(--peach-100);
+		border: 1.5px solid var(--peach-300);
+		color: var(--peach-500);
 	}
 
 	.projects-grid {
@@ -276,20 +270,10 @@
 	}
 
 	@keyframes float {
-		0% {
-			transform: translate3d(0, 0, 0) scale(1);
-		}
-		25% {
-			transform: translate3d(15px, -20px, 0) scale(1.02);
-		}
-		50% {
-			transform: translate3d(-10px, -35px, 0) scale(1.05);
-		}
-		75% {
-			transform: translate3d(-25px, -15px, 0) scale(1.03);
-		}
-		100% {
-			transform: translate3d(0, 0, 0) scale(1);
-		}
+		0% { transform: translate3d(0, 0, 0) scale(1); }
+		25% { transform: translate3d(12px, -16px, 0) scale(1.03); }
+		50% { transform: translate3d(-8px, -28px, 0) scale(1.05); }
+		75% { transform: translate3d(-20px, -12px, 0) scale(1.02); }
+		100% { transform: translate3d(0, 0, 0) scale(1); }
 	}
 </style>
