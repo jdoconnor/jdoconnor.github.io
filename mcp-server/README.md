@@ -12,13 +12,13 @@ npm start
 
 ## Available Tools
 
-- `get_contact_info` - Contact information (email, calendly, location)
+- `get_contact_info` - Contact information (email, calendar, location)
 - `get_social_links` - All social/professional profile links
 - `get_work_history` - Complete professional work history
 - `get_current_projects` - Projects currently working on
 - `get_expertise` - Areas of professional expertise
 - `get_skills` - Technical and leadership skills
-- `schedule_meeting` - Get Calendly link to book time
+- `schedule_meeting` - Get calendar link to book time
 - `send_email` - Get email address for contact
 
 ## Available Resources
@@ -67,7 +67,7 @@ Or use npx to run it:
 
 The server includes:
 
-- **Contact**: Email (jaydoconnor@gmail.com), Calendly, San Francisco Bay Area
+- **Contact**: Email (jaydoconnor@gmail.com), Cal, San Francisco Bay Area
 - **Social**: LinkedIn, GitHub, Discord
 - **Work History**: SecurityPal, Dogshit AI (Founder), Slack, Quip/Salesforce
 - **Current Projects**: SecurityPal Concierge Agents, DogShitAI.com, Rage Calculator

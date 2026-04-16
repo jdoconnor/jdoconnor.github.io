@@ -22,7 +22,7 @@ const contactInfo = {
 	phone: null,
 	location: "San Francisco Bay Area",
 	bio: "I help high-velocity companies turn ambiguous problems into durable systems—and ship the work their customers rave about.",
-	calendly: "https://www.cal.com/jdoconnor",
+	calendar: "https://www.cal.com/jdoconnor",
 };
 
 const socialLinks = {
@@ -217,7 +217,7 @@ server.setRequestHandler(types.ListToolsRequestSchema, async () => {
 			{
 				name: "get_contact_info",
 				description:
-					"Get Jay O'Connor's contact information including email, calendly, and location",
+					"Get Jay O'Connor's contact information including email, calendar, and location",
 				inputSchema: {
 					type: "object",
 					properties: {},
@@ -265,7 +265,7 @@ server.setRequestHandler(types.ListToolsRequestSchema, async () => {
 			},
 			{
 				name: "schedule_meeting",
-				description: "Get the Calendly link to schedule a meeting with Jay",
+				description: "Get the calendar link to schedule a meeting with Jay",
 				inputSchema: {
 					type: "object",
 					properties: {},
@@ -346,7 +346,7 @@ server.setRequestHandler(types.CallToolRequestSchema, async (request) => {
 				content: [
 					{
 						type: "text",
-						text: `Schedule a meeting with Jay: ${contactInfo.calendly}`,
+						text: `Schedule a meeting with Jay: ${contactInfo.calendar}`,
 					},
 				],
 			};

@@ -8,7 +8,7 @@ This file provides context about Jay O'Connor for AI agents working on his behal
 
 - **Email**: jaydoconnor@gmail.com
 - **Location**: San Francisco Bay Area
-- **Calendly**: https://www.cal.com/jdoconnor
+- **Calendar**: https://www.cal.com/jdoconnor
 
 ## Social Links
 
