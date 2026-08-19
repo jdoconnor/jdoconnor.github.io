@@ -5,7 +5,8 @@
 		{
 			title: "SecurityPal Concierge Agents",
 			href: "https://securitypal.com",
-			detail: "Applied AI rollout pairing concierge agents with human QA for questionnaires and audits.",
+			detail:
+				"Applied AI rollout pairing concierge agents with human QA for questionnaires and audits.",
 			status: "shipping",
 		},
 		{
@@ -13,6 +14,12 @@
 			href: "https://dogshitai.com",
 			detail: "Edge-native pet tracking experiences built with SvelteKit, Turso, and Cloudflare.",
 			status: "in-flight",
+		},
+		{
+			title: "FootSlapping",
+			href: "https://footslapping.com",
+			detail: "Team step competition app—challenge your friends and see who steps up.",
+			status: "live",
 		},
 		{
 			title: "Rage Calculator",
@@ -94,27 +101,29 @@
 		<div class="intro">
 			<p class="eyebrow reveal">Product & Engineering Leader</p>
 			<h1 class="reveal delay-1">Hi, I'm Jay.</h1>
-			<p class="lede reveal delay-2">
-				I help high-velocity companies turn ambiguous problems into durable systems—and ship the work
-				their customers rave about.
+			<div class="stamp-wrap reveal delay-2" aria-hidden="true">
+				<span class="stamp">certified stupid brand ★</span>
+			</div>
+			<p class="lede reveal delay-3">
+				I help high-velocity companies turn ambiguous problems into durable systems—and ship the
+				work their customers rave about.
 			</p>
-			<div class="hero-actions reveal delay-3">
+			<div class="hero-actions reveal delay-4">
 				<a class="btn primary" href="/now">What I'm working on</a>
 				<a class="btn ghost" href="/blog">Read my writing</a>
 			</div>
-			<dl class="metrics reveal delay-4">
-								<div>
+			<dl class="metrics reveal delay-5">
+				<div>
 					<dt>Years in tech</dt>
 					<dd>25+</dd>
 				</div>
-								<div>
+				<div>
 					<dt>Years growing teams</dt>
 					<dd>15+</dd>
 				</div>
-
 			</dl>
 		</div>
-		<div class="signal card glass reveal delay-5">
+		<div class="signal card glass reveal delay-6">
 			<p class="badge">Right now</p>
 			<ul class="now-list">
 				{#each nowProjects as project}
@@ -135,7 +144,7 @@
 </section>
 
 <section class="streams">
-	<div class="panel card reveal delay-6">
+	<div class="panel card reveal delay-7">
 		<div class="tracks">
 			{#each tracks as track}
 				<article class="track-{track.color}">
@@ -148,12 +157,14 @@
 							<p class="summary">{track.summary}</p>
 						</div>
 					</div>
-					<a class="track-link track-link--{track.color}" href={track.link.href}>{track.link.text} →</a>
+					<a class="track-link track-link--{track.color}" href={track.link.href}
+						>{track.link.text} →</a
+					>
 				</article>
 			{/each}
 		</div>
 	</div>
-	<div class="timeline card reveal delay-7">
+	<div class="timeline card reveal delay-8">
 		<p class="eyebrow">Journey</p>
 		<ol>
 			{#each signals as signal}
@@ -253,6 +264,25 @@
 		margin-bottom: 2rem;
 	}
 
+	.stamp-wrap {
+		margin: -0.5rem 0 1.5rem;
+	}
+
+	.stamp {
+		display: inline-block;
+		padding: 0.5rem 1.4rem;
+		border: 2px dashed var(--lavender-400);
+		border-radius: 10px;
+		color: var(--lavender-500);
+		font-size: 1.15rem;
+		font-weight: 700;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+		transform: rotate(-3deg);
+		animation: stamp-wobble 6s ease-in-out infinite;
+		background: rgba(255, 255, 255, 0.4);
+	}
+
 	.hero-actions {
 		display: flex;
 		flex-wrap: wrap;
@@ -265,7 +295,9 @@
 		padding: 0.9rem 2.4rem;
 		font-weight: 700;
 		font-size: 1.5rem;
-		transition: transform 0.25s ease, box-shadow 0.25s ease;
+		transition:
+			transform 0.25s ease,
+			box-shadow 0.25s ease;
 		text-decoration: none;
 		display: inline-block;
 	}
@@ -279,7 +311,7 @@
 	.btn.ghost {
 		border: 1.5px solid var(--warm-300);
 		color: var(--warm-700);
-		background: rgba(255,255,255,0.7);
+		background: rgba(255, 255, 255, 0.7);
 	}
 
 	.btn.ghost:hover {
@@ -350,13 +382,27 @@
 		animation: reveal-up 0.7s ease forwards;
 	}
 
-	.reveal.delay-1 { animation-delay: 0.08s; }
-	.reveal.delay-2 { animation-delay: 0.16s; }
-	.reveal.delay-3 { animation-delay: 0.24s; }
-	.reveal.delay-4 { animation-delay: 0.32s; }
-	.reveal.delay-5 { animation-delay: 0.4s; }
-	.reveal.delay-6 { animation-delay: 0.5s; }
-	.reveal.delay-7 { animation-delay: 0.6s; }
+	.reveal.delay-1 {
+		animation-delay: 0.08s;
+	}
+	.reveal.delay-2 {
+		animation-delay: 0.16s;
+	}
+	.reveal.delay-3 {
+		animation-delay: 0.24s;
+	}
+	.reveal.delay-4 {
+		animation-delay: 0.32s;
+	}
+	.reveal.delay-5 {
+		animation-delay: 0.4s;
+	}
+	.reveal.delay-6 {
+		animation-delay: 0.5s;
+	}
+	.reveal.delay-7 {
+		animation-delay: 0.6s;
+	}
 
 	.badge {
 		font-size: 1.1rem;
@@ -390,9 +436,18 @@
 		margin-top: 0.6rem;
 	}
 
-	.dot--shipping { background: #79ccaa; box-shadow: 0 0 8px rgba(121,204,170,0.6); }
-	.dot--in-flight { background: #bba8f5; box-shadow: 0 0 8px rgba(187,168,245,0.6); }
-	.dot--live { background: #f0a878; box-shadow: 0 0 8px rgba(240,168,120,0.6); }
+	.dot--shipping {
+		background: #79ccaa;
+		box-shadow: 0 0 8px rgba(121, 204, 170, 0.6);
+	}
+	.dot--in-flight {
+		background: #bba8f5;
+		box-shadow: 0 0 8px rgba(187, 168, 245, 0.6);
+	}
+	.dot--live {
+		background: #f0a878;
+		box-shadow: 0 0 8px rgba(240, 168, 120, 0.6);
+	}
 
 	.now-list .title,
 	.timeline .title {
@@ -432,12 +487,14 @@
 		flex-direction: column;
 		gap: 1.2rem;
 		flex: 1 1 auto;
-		transition: transform 0.25s ease, box-shadow 0.25s ease;
+		transition:
+			transform 0.25s ease,
+			box-shadow 0.25s ease;
 	}
 
 	.tracks article:hover {
 		transform: translateY(-2px);
-		box-shadow: 0 8px 24px rgba(100,80,60,0.1);
+		box-shadow: 0 8px 24px rgba(100, 80, 60, 0.1);
 	}
 
 	.track-lavender {
@@ -503,11 +560,19 @@
 		transition: opacity 0.2s ease;
 	}
 
-	.track-link--lavender { color: var(--lavender-500); }
-	.track-link--mint { color: var(--mint-500); }
-	.track-link--peach { color: var(--peach-500); }
+	.track-link--lavender {
+		color: var(--lavender-500);
+	}
+	.track-link--mint {
+		color: var(--mint-500);
+	}
+	.track-link--peach {
+		color: var(--peach-500);
+	}
 
-	.track-link:hover { opacity: 0.75; }
+	.track-link:hover {
+		opacity: 0.75;
+	}
 
 	.label {
 		font-size: 1.25rem;
@@ -566,15 +631,41 @@
 
 	/* Keyframes */
 	@keyframes drift {
-		0% { transform: translate(0, 0) scale(1); }
-		33% { transform: translate(3%, 5%) scale(1.06); }
-		66% { transform: translate(-4%, -3%) scale(0.97); }
-		100% { transform: translate(0, 0) scale(1); }
+		0% {
+			transform: translate(0, 0) scale(1);
+		}
+		33% {
+			transform: translate(3%, 5%) scale(1.06);
+		}
+		66% {
+			transform: translate(-4%, -3%) scale(0.97);
+		}
+		100% {
+			transform: translate(0, 0) scale(1);
+		}
+	}
+
+	@keyframes stamp-wobble {
+		0% {
+			transform: rotate(-4deg);
+		}
+		50% {
+			transform: rotate(2deg);
+		}
+		100% {
+			transform: rotate(-4deg);
+		}
 	}
 
 	@keyframes reveal-up {
-		0% { opacity: 0; transform: translateY(28px) scale(0.98); }
-		100% { opacity: 1; transform: translateY(0) scale(1); }
+		0% {
+			opacity: 0;
+			transform: translateY(28px) scale(0.98);
+		}
+		100% {
+			opacity: 1;
+			transform: translateY(0) scale(1);
+		}
 	}
 
 	@media (max-width: 960px) {

@@ -10,11 +10,11 @@
 		<div class="petal petal-delta"></div>
 	</div>
 	<header class="now-hero">
-		<p class="timestamp">Now · Updated March 1, 2026</p>
+		<p class="timestamp">Now · Updated August 18, 2026</p>
 		<h1 id="now-title">What I'm building for 2026</h1>
 		<p class="hero-lede">
-			Cultivating applied AI systems, autonomous tooling, and human-in-the-loop experiences that feel
-			bespoke—even as they scale.
+			Cultivating applied AI systems, autonomous tooling, and human-in-the-loop experiences that
+			feel bespoke—even as they scale.
 		</p>
 		<div class="signal-band" role="list">
 			<span role="listitem" class="tag tag--mint">Applied AI</span>
@@ -54,7 +54,36 @@
 			link="https://dogshitai.com"
 		/>
 		<ProjectCard
+			title="FootSlapping"
+			image="/footslapping.jpg"
+			description="A team step competition app—form teams, challenge your friends, and see who steps up. Walk, repeat, compete, repeat, slap feet, slap feet."
+			tech={[
+				{
+					name: "PWA",
+					tooltip: "Installable web app with offline support and push notifications",
+					color: "primary-content",
+				},
+				{
+					name: "Better Auth",
+					tooltip: "Google sign-in for frictionless team onboarding",
+					color: "secondary",
+				},
+				{
+					name: "Cloudflare Workers",
+					tooltip: "Edge runtime keeps step sync low-latency worldwide",
+					color: "neutral",
+				},
+				{
+					name: "Web Push",
+					tooltip: "Push notifications for challenges and step milestones",
+					color: "neutral",
+				},
+			]}
+			link="https://footslapping.com"
+		/>
+		<ProjectCard
 			title="SecurityPal Concierge Agents"
+			image="/securitypal.jpg"
 			description="Designing SecurityPal's applied AI strategy—deploying concierge agents that pair proprietary assurance data with human QA to automate questionnaires, evidence packaging, and audit readiness."
 			tech={[
 				{
@@ -100,6 +129,7 @@
 		/>
 		<ProjectCard
 			title="Terminal 0"
+			image="/terminal0.jpg"
 			description="Terminal 0 is a multiplayer airport bingo game that turns layovers into collaborative hunts for real-world terminal happenings."
 			tech={[
 				{
@@ -118,7 +148,7 @@
 					color: "neutral",
 				},
 			]}
-			link="https://terminal0.jayooconnor.com"
+			link="https://terminal0.jayoconnor.com"
 		/>
 	</div>
 </section>
@@ -270,10 +300,20 @@
 	}
 
 	@keyframes float {
-		0% { transform: translate3d(0, 0, 0) scale(1); }
-		25% { transform: translate3d(12px, -16px, 0) scale(1.03); }
-		50% { transform: translate3d(-8px, -28px, 0) scale(1.05); }
-		75% { transform: translate3d(-20px, -12px, 0) scale(1.02); }
-		100% { transform: translate3d(0, 0, 0) scale(1); }
+		0% {
+			transform: translate3d(0, 0, 0) scale(1);
+		}
+		25% {
+			transform: translate3d(12px, -16px, 0) scale(1.03);
+		}
+		50% {
+			transform: translate3d(-8px, -28px, 0) scale(1.05);
+		}
+		75% {
+			transform: translate3d(-20px, -12px, 0) scale(1.02);
+		}
+		100% {
+			transform: translate3d(0, 0, 0) scale(1);
+		}
 	}
 </style>

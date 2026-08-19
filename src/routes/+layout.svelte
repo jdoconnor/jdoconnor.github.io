@@ -34,15 +34,12 @@
 				<span class="brand-mark" aria-hidden="true">JO</span>
 				<div class="brand-copy">
 					<span class="brand-name">Jay OConnor</span>
-					<span class="brand-caption">Engineering × Product</span>
+					<span class="brand-caption">my brand is stupid</span>
 				</div>
 			</a>
 			<nav class="primary-nav" aria-label="Primary site navigation">
 				{#each navLinks as link}
-					<a
-						href={link.href}
-						class:selected={isActive(link.href, $page.url.pathname)}
-					>
+					<a href={link.href} class:selected={isActive(link.href, $page.url.pathname)}>
 						{link.label}
 					</a>
 				{/each}
@@ -79,6 +76,7 @@
 				link="https://discordapp.com/users/257316698728693760"
 			/>
 		</nav>
+		<p class="footer-tag">my brand is stupid</p>
 	</footer>
 </div>
 
@@ -156,7 +154,10 @@
 		font-weight: 600;
 		letter-spacing: 0.08em;
 		color: var(--warm-600);
-		transition: color 0.25s ease, background 0.25s ease, transform 0.25s ease;
+		transition:
+			color 0.25s ease,
+			background 0.25s ease,
+			transform 0.25s ease;
 		text-decoration: none;
 	}
 
@@ -181,7 +182,9 @@
 		letter-spacing: 0.08em;
 		font-size: 1.2rem;
 		box-shadow: 0 6px 20px rgba(155, 125, 232, 0.3);
-		transition: transform 0.25s ease, box-shadow 0.25s ease;
+		transition:
+			transform 0.25s ease,
+			box-shadow 0.25s ease;
 		text-decoration: none;
 	}
 
@@ -189,6 +192,15 @@
 		transform: translateY(-2px);
 		box-shadow: 0 12px 30px rgba(155, 125, 232, 0.4);
 		color: #fff;
+	}
+
+	.footer-tag {
+		margin: 1.5rem 0 0;
+		font-size: 1.05rem;
+		font-weight: 600;
+		letter-spacing: 0.22em;
+		text-transform: uppercase;
+		color: var(--warm-400);
 	}
 
 	@media (max-width: 960px) {
