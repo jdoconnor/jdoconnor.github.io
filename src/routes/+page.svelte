@@ -90,13 +90,6 @@
 </script>
 
 <section class="landing card fade-in" role="group" aria-label="Hero intro">
-	<!-- Soft pastel blobs -->
-	<div class="blob-field" aria-hidden="true">
-		<span class="blob blob-1"></span>
-		<span class="blob blob-2"></span>
-		<span class="blob blob-3"></span>
-	</div>
-
 	<div class="hero-grid">
 		<div class="intro">
 			<p class="eyebrow reveal">Product & Engineering Leader</p>
@@ -182,53 +175,8 @@
 	.landing {
 		position: relative;
 		overflow: hidden;
-		background: linear-gradient(135deg, #f5f0ff 0%, #edfaf3 50%, #fff4ee 100%) !important;
-		border: 1px solid var(--warm-200) !important;
-	}
-
-	/* Pastel floating blobs */
-	.blob-field {
-		position: absolute;
-		inset: 0;
-		pointer-events: none;
-		overflow: hidden;
-	}
-
-	.blob {
-		position: absolute;
-		border-radius: 50%;
-		filter: blur(60px);
-		opacity: 0.55;
-		mix-blend-mode: multiply;
-	}
-
-	.blob-1 {
-		width: clamp(200px, 35vw, 420px);
-		height: clamp(200px, 35vw, 420px);
-		top: -10%;
-		right: -5%;
-		background: radial-gradient(circle, #d9ccff, #bba8f5 60%);
-		animation: drift 18s ease-in-out infinite;
-	}
-
-	.blob-2 {
-		width: clamp(150px, 25vw, 320px);
-		height: clamp(150px, 25vw, 320px);
-		bottom: -15%;
-		left: 10%;
-		background: radial-gradient(circle, #a8e4c4, #79ccaa 60%);
-		animation: drift 24s ease-in-out infinite reverse;
-		animation-delay: 3s;
-	}
-
-	.blob-3 {
-		width: clamp(120px, 20vw, 260px);
-		height: clamp(120px, 20vw, 260px);
-		top: 30%;
-		left: -8%;
-		background: radial-gradient(circle, #f8c9a6, #f0a878 60%);
-		animation: drift 20s ease-in-out infinite;
-		animation-delay: 7s;
+		background: #fffdf7 !important;
+		border: 3px solid var(--warm-900) !important;
 	}
 
 	.hero-grid {
@@ -303,9 +251,9 @@
 	}
 
 	.btn.primary {
-		background: linear-gradient(120deg, #bba8f5, #79ccaa);
+		background: var(--lavender-400);
 		color: #fff;
-		box-shadow: 0 8px 24px rgba(155, 125, 232, 0.3);
+		box-shadow: 0 8px 24px rgba(198, 40, 40, 0.35);
 	}
 
 	.btn.ghost {
@@ -358,11 +306,7 @@
 		font-size: 2.4rem;
 		font-weight: 700;
 		margin: 0;
-		color: var(--warm-900);
-		background: linear-gradient(120deg, #bba8f5, #52b38e);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-clip: text;
+		color: var(--lavender-500);
 	}
 
 	.signal {
@@ -472,6 +416,10 @@
 		margin-top: 2rem;
 	}
 
+	.streams .panel {
+		border: 2px solid var(--warm-900) !important;
+	}
+
 	.tracks {
 		display: flex;
 		flex-direction: column;
@@ -498,18 +446,18 @@
 	}
 
 	.track-lavender {
-		background: linear-gradient(140deg, #f5f0ff, #ede5ff);
-		border-color: var(--lavender-200) !important;
+		background: var(--lavender-50);
+		border-color: var(--lavender-300) !important;
 	}
 
 	.track-mint {
-		background: linear-gradient(140deg, #edfaf3, #d6f3e4);
-		border-color: var(--mint-200) !important;
+		background: var(--mint-50);
+		border-color: var(--mint-300) !important;
 	}
 
 	.track-peach {
-		background: linear-gradient(140deg, #fff4ee, #fde8d8);
-		border-color: var(--peach-200) !important;
+		background: var(--peach-50);
+		border-color: var(--peach-300) !important;
 	}
 
 	.track-head {
@@ -528,17 +476,17 @@
 	}
 
 	.track-icon--lavender {
-		background: linear-gradient(135deg, #d9ccff, #bba8f5);
+		background: var(--lavender-400);
 		color: #fff;
 	}
 
 	.track-icon--mint {
-		background: linear-gradient(135deg, #a8e4c4, #79ccaa);
-		color: #fff;
+		background: var(--mint-400);
+		color: #141414;
 	}
 
 	.track-icon--peach {
-		background: linear-gradient(135deg, #f8c9a6, #f0a878);
+		background: var(--peach-400);
 		color: #fff;
 	}
 
@@ -593,7 +541,7 @@
 	/* Timeline */
 	.timeline {
 		background: var(--warm-50) !important;
-		border: 1px solid var(--warm-300) !important;
+		border: 2px solid var(--warm-900) !important;
 	}
 
 	.timeline ol {
@@ -616,8 +564,8 @@
 		width: 1rem;
 		height: 1rem;
 		border-radius: 50%;
-		background: linear-gradient(130deg, #bba8f5, #79ccaa);
-		box-shadow: 0 0 10px rgba(187, 168, 245, 0.5);
+		background: var(--lavender-400);
+		box-shadow: 0 0 10px rgba(198, 40, 40, 0.5);
 	}
 
 	.timeline .date {
@@ -630,21 +578,6 @@
 	}
 
 	/* Keyframes */
-	@keyframes drift {
-		0% {
-			transform: translate(0, 0) scale(1);
-		}
-		33% {
-			transform: translate(3%, 5%) scale(1.06);
-		}
-		66% {
-			transform: translate(-4%, -3%) scale(0.97);
-		}
-		100% {
-			transform: translate(0, 0) scale(1);
-		}
-	}
-
 	@keyframes stamp-wobble {
 		0% {
 			transform: rotate(-4deg);

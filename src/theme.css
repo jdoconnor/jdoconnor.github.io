@@ -12,53 +12,53 @@ html {
 }
 
 :root {
-	/* Pastel Palette */
-	--lavender-50: #f5f0ff;
-	--lavender-100: #ede5ff;
-	--lavender-200: #d9ccff;
-	--lavender-300: #bba8f5;
-	--lavender-400: #9b7de8;
-	--lavender-500: #7c5bd4;
+	/* Circus Palette */
+	--lavender-50: #fdecec;
+	--lavender-100: #fbd9d9;
+	--lavender-200: #f6b1b1;
+	--lavender-300: #ec7a7a;
+	--lavender-400: #e63946;
+	--lavender-500: #c1121f;
 
-	--mint-50: #edfaf3;
-	--mint-100: #d6f3e4;
-	--mint-200: #a8e4c4;
-	--mint-300: #79ccaa;
-	--mint-400: #52b38e;
-	--mint-500: #359872;
+	--mint-50: #fffbe6;
+	--mint-100: #fff4c2;
+	--mint-200: #ffe980;
+	--mint-300: #ffd93d;
+	--mint-400: #fcc419;
+	--mint-500: #e0a800;
 
-	--peach-50: #fff4ee;
-	--peach-100: #fde8d8;
-	--peach-200: #f8c9a6;
-	--peach-300: #f0a878;
-	--peach-400: #e0825c;
-	--peach-500: #c4623e;
+	--peach-50: #eef4ff;
+	--peach-100: #dce9fd;
+	--peach-200: #b6d0fa;
+	--peach-300: #84abf2;
+	--peach-400: #3a86ff;
+	--peach-500: #1d5fd6;
 
-	--rose-50: #fff0f4;
-	--rose-100: #fddde7;
-	--rose-200: #f9bad0;
-	--rose-300: #f090b4;
-	--rose-400: #d96b92;
-	--rose-500: #b84d72;
+	--rose-50: #ecfdf3;
+	--rose-100: #d3f8e3;
+	--rose-200: #a5ebc4;
+	--rose-300: #66d9a1;
+	--rose-400: #2fbf7f;
+	--rose-500: #1a9e63;
 
-	--sky-50: #eef7fd;
-	--sky-100: #d8eef9;
-	--sky-200: #aad7f0;
-	--sky-300: #75bce3;
-	--sky-400: #4ea1d0;
-	--sky-500: #3083b4;
+	--sky-50: #ecfeff;
+	--sky-100: #cffafe;
+	--sky-200: #a5f3fc;
+	--sky-300: #67e8f9;
+	--sky-400: #22d3ee;
+	--sky-500: #06b6d4;
 
 	/* Warm neutrals */
-	--warm-50: #fefcf8;
+	--warm-50: #ffffff;
 	--warm-100: #f9f6f0;
 	--warm-200: #f0ece4;
 	--warm-300: #e2dbd0;
 	--warm-400: #c7bcb0;
 	--warm-500: #a89c90;
 	--warm-600: #7d7068;
-	--warm-700: #5a4f47;
-	--warm-800: #3a302a;
-	--warm-900: #1a1614;
+	--warm-700: #4a4038;
+	--warm-800: #2a2420;
+	--warm-900: #141414;
 
 	/* Semantic */
 	--background: var(--warm-50);
@@ -82,10 +82,10 @@ html {
 }
 
 @theme {
-	--color-accent-primary: #9b7de8;
-	--color-accent-secondary: #52b38e;
-	--color-text-primary: #1a1614;
-	--color-text-secondary: #5a4f47;
+	--color-accent-primary: #e63946;
+	--color-accent-secondary: #fcc419;
+	--color-text-primary: #141414;
+	--color-text-secondary: #4a4038;
 	--color-text-muted: #a89c90;
 }
 
@@ -102,7 +102,8 @@ body {
 body {
 	display: flex;
 	flex-direction: column;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+	font-family:
+		-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 	font-size: 1.6rem;
 	line-height: 1.6;
 	-webkit-font-smoothing: antialiased;
@@ -137,7 +138,8 @@ h4,
 h5,
 h6 {
 	color: var(--text-primary) !important;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+	font-family:
+		-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 	margin: 0 0 1rem 0;
 	font-weight: 700;
 	line-height: 1.2;
@@ -235,14 +237,17 @@ button:focus-visible {
 	padding: 1.5rem;
 	margin-bottom: 2rem;
 	display: block;
-	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	transition:
+		transform 0.3s ease,
+		box-shadow 0.3s ease;
 }
 
 .project-title {
 	color: var(--text-primary) !important;
 	font-size: 2rem;
 	font-weight: 700;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+	font-family:
+		-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 	margin: 0 0 0.75rem 0;
 	line-height: 1.3;
 }
@@ -309,28 +314,9 @@ footer .icons a:hover svg {
 	color: var(--accent-primary) !important;
 }
 
-/* Gradient text */
+/* Solid accent text */
 .gradient-text {
-	background: linear-gradient(135deg, var(--lavender-400), var(--accent-secondary));
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	background-clip: text;
-	background-size: 200% 200%;
-	animation: gradient-shift 4s ease infinite;
-}
-
-@keyframes gradient-shift {
-	0% {
-		background-position: 0% 50%;
-	}
-
-	50% {
-		background-position: 100% 50%;
-	}
-
-	100% {
-		background-position: 0% 50%;
-	}
+	color: var(--lavender-500);
 }
 
 @keyframes fade-in {
@@ -380,7 +366,7 @@ footer .icons a:hover svg {
 
 .project-link {
 	display: inline-block;
-	background: linear-gradient(120deg, var(--lavender-300), var(--mint-300));
+	background: var(--lavender-400);
 	color: #fff;
 	padding: 0.75rem 2rem;
 	border-radius: 999px;
@@ -390,12 +376,12 @@ footer .icons a:hover svg {
 	text-transform: uppercase;
 	letter-spacing: 0.05em;
 	transition: all 0.3s ease;
-	box-shadow: 0 6px 18px rgba(155, 125, 232, 0.25);
+	box-shadow: 0 6px 18px rgba(198, 40, 40, 0.25);
 }
 
 .project-link:hover {
 	transform: translateY(-2px) scale(1.02);
-	box-shadow: 0 10px 28px rgba(155, 125, 232, 0.35);
+	box-shadow: 0 10px 28px rgba(198, 40, 40, 0.35);
 	color: #fff;
 }
 

@@ -25,7 +25,8 @@
 		</div>
 		{#if link}
 			<div class="project-actions">
-				<a href={link} target="_blank" rel="noopener noreferrer" class="project-link">Go to app →</a>
+				<a href={link} target="_blank" rel="noopener noreferrer" class="project-link">Go to app →</a
+				>
 			</div>
 		{/if}
 	</div>
@@ -42,7 +43,10 @@
 		gap: 1.25rem;
 		position: relative;
 		overflow: hidden;
-		transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+		transition:
+			transform 0.3s ease,
+			box-shadow 0.3s ease,
+			border-color 0.3s ease;
 		box-shadow: 0 2px 12px rgba(100, 80, 60, 0.06);
 	}
 
@@ -56,8 +60,8 @@
 		margin: 0;
 		border-radius: 14px;
 		overflow: hidden;
-		background: linear-gradient(135deg, var(--lavender-50), var(--mint-50));
-		border: 1px solid var(--warm-200);
+		background: var(--warm-100);
+		border: 1px solid var(--warm-300);
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -78,6 +82,7 @@
 		display: flex;
 		flex-direction: column;
 		gap: 1rem;
+		flex: 1;
 	}
 
 	.project-title {
@@ -99,6 +104,7 @@
 		display: flex;
 		flex-wrap: wrap;
 		gap: 0.5rem;
+		margin-top: auto;
 	}
 
 	.tech-pill {
@@ -110,7 +116,9 @@
 		font-size: 1.2rem;
 		font-weight: 600;
 		letter-spacing: 0.02em;
-		transition: background 0.2s ease, transform 0.2s ease;
+		transition:
+			background 0.2s ease,
+			transform 0.2s ease;
 		cursor: default;
 	}
 
@@ -121,7 +129,7 @@
 
 	.project-link {
 		display: inline-block;
-		background: linear-gradient(120deg, #bba8f5, #79ccaa);
+		background: var(--lavender-400);
 		color: #fff;
 		padding: 0.7rem 1.8rem;
 		border-radius: 999px;
@@ -131,12 +139,12 @@
 		text-transform: uppercase;
 		letter-spacing: 0.05em;
 		transition: all 0.3s ease;
-		box-shadow: 0 4px 16px rgba(155, 125, 232, 0.25);
+		box-shadow: 0 4px 16px rgba(198, 40, 40, 0.25);
 	}
 
 	.project-link:hover {
 		transform: translateY(-2px) scale(1.02);
-		box-shadow: 0 8px 24px rgba(155, 125, 232, 0.35);
+		box-shadow: 0 8px 24px rgba(198, 40, 40, 0.35);
 		color: #fff;
 	}
 

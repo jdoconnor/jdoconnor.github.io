@@ -116,7 +116,7 @@
 		place-items: center;
 		font-weight: 700;
 		letter-spacing: 0.05em;
-		background: linear-gradient(130deg, #bba8f5, #79ccaa);
+		background: var(--lavender-400);
 		color: #fff;
 		font-size: 1.3rem;
 	}
@@ -175,17 +175,25 @@
 	.cta {
 		padding: 0.8rem 1.8rem;
 		border-radius: 999px;
-		background: linear-gradient(120deg, #bba8f5, #79ccaa);
-		color: #fff;
+		background: var(--mint-400);
+		color: #141414;
 		font-weight: 700;
 		text-transform: uppercase;
 		letter-spacing: 0.08em;
 		font-size: 1.2rem;
-		box-shadow: 0 6px 20px rgba(155, 125, 232, 0.3);
+		box-shadow: 0 6px 20px rgba(252, 196, 25, 0.4);
 		transition:
 			transform 0.25s ease,
-			box-shadow 0.25s ease;
+			box-shadow 0.25s ease,
+			background 0.25s ease;
 		text-decoration: none;
+	}
+
+	.cta:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 12px 30px rgba(252, 196, 25, 0.5);
+		background: var(--mint-500);
+		color: #141414;
 	}
 
 	.cta:hover {

@@ -1,13 +1,13 @@
 <script lang="ts">
-	import { browser } from '$app/environment';
-	import { onMount } from 'svelte';
+	import { browser } from "$app/environment";
+	import { onMount } from "svelte";
 
-	const STORAGE_KEY = 'rage-calculator';
+	const STORAGE_KEY = "rage-calculator";
 	const WORKDAYS_PER_YEAR = 260; // assume no weekends
 
-	let salary = '';
-	let holidays = '';
-	let daysOff = '';
+	let salary = "";
+	let holidays = "";
+	let daysOff = "";
 	let hasInteracted = false;
 
 	type StoredValues = {
@@ -25,17 +25,17 @@
 
 		try {
 			const parsed = JSON.parse(stored) as Partial<StoredValues>;
-			if (typeof parsed.salary === 'number') {
+			if (typeof parsed.salary === "number") {
 				salary = parsed.salary.toString();
 			}
-			if (typeof parsed.holidays === 'number') {
+			if (typeof parsed.holidays === "number") {
 				holidays = parsed.holidays.toString();
 			}
-			if (typeof parsed.daysOff === 'number') {
+			if (typeof parsed.daysOff === "number") {
 				daysOff = parsed.daysOff.toString();
 			}
 		} catch (error) {
-			console.error('Unable to read rage calculator history', error);
+			console.error("Unable to read rage calculator history", error);
 		}
 	});
 
@@ -55,7 +55,7 @@
 		const payload: StoredValues = {
 			salary: floatFrom(salary),
 			holidays: integerFrom(holidays),
-			daysOff: integerFrom(daysOff)
+			daysOff: integerFrom(daysOff),
 		};
 
 		localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
@@ -67,9 +67,9 @@
 	}
 
 	function resetForm() {
-		salary = '';
-		holidays = '';
-		daysOff = '';
+		salary = "";
+		holidays = "";
+		daysOff = "";
 		hasInteracted = false;
 		if (browser) {
 			localStorage.removeItem(STORAGE_KEY);
@@ -83,18 +83,18 @@
 	$: workingDays = Math.max(1, WORKDAYS_PER_YEAR - totalDaysOff);
 	$: dailyRate = salaryValue > 0 ? salaryValue / workingDays : 0;
 	$: formattedDailyRate = dailyRate
-		? dailyRate.toLocaleString('en-US', {
-				style: 'currency',
-				currency: 'USD',
-				maximumFractionDigits: dailyRate >= 100 ? 0 : 2
-		  })
-		: '';
+		? dailyRate.toLocaleString("en-US", {
+				style: "currency",
+				currency: "USD",
+				maximumFractionDigits: dailyRate >= 100 ? 0 : 2,
+			})
+		: "";
 	$: headline = formattedDailyRate
 		? `I know your day sucked, but you still made ${formattedDailyRate} today.`
 		: "Tell me about your year and I'll keep score for you.";
 	$: subline = formattedDailyRate
 		? `Across roughly ${workingDays.toLocaleString()} working days, that's what your grit is worth.`
-		: 'Drop in a few numbers and I will do the emotional accounting for you.';
+		: "Drop in a few numbers and I will do the emotional accounting for you.";
 </script>
 
 <svelte:head>
@@ -106,19 +106,12 @@
 </svelte:head>
 
 <section class="rage fade-in">
-	<!-- Animated pastel background blobs -->
-	<div class="blob-bg" aria-hidden="true">
-		<span class="blob b1"></span>
-		<span class="blob b2"></span>
-		<span class="blob b3"></span>
-	</div>
-
 	<header class="rage-header">
 		<p class="eyebrow">New route · Rage</p>
 		<h1 class="gradient-text">Your rage-to-pay translator</h1>
 		<p class="intro-lede">
-			We all have the kind of day that fries every nerve ending. I'm assuming you already protect your weekends,
-			so let me do the weekday math your brain can't hold right now.
+			We all have the kind of day that fries every nerve ending. I'm assuming you already protect
+			your weekends, so let me do the weekday math your brain can't hold right now.
 		</p>
 	</header>
 
@@ -168,9 +161,7 @@
 		</div>
 
 		<div class="actions">
-			<button type="button" class="ghost-btn" on:click={resetForm}>
-				Clear the slate
-			</button>
+			<button type="button" class="ghost-btn" on:click={resetForm}> Clear the slate </button>
 			{#if hasInteracted}
 				<span class="hint">Autosaved locally. No servers, no bosses, just catharsis.</span>
 			{/if}
@@ -180,7 +171,7 @@
 	<div class="result-card">
 		<div class="payout-spotlight">
 			<p class="eyebrow">Today's payout</p>
-			<p class="payout-amount">{formattedDailyRate || '—'}</p>
+			<p class="payout-amount">{formattedDailyRate || "—"}</p>
 			<p class="payout-context">
 				Even on the worst weekday, this is what you earned for showing up.
 			</p>
@@ -203,7 +194,8 @@
 			</dl>
 
 			<p class="whisper">
-				Need another reminder later? Your answers stay in this browser so future-you can vent faster.
+				Need another reminder later? Your answers stay in this browser so future-you can vent
+				faster.
 			</p>
 		</div>
 	</div>
@@ -217,55 +209,10 @@
 		gap: 2.4rem;
 		padding: clamp(2rem, 4vw, 4rem);
 		border-radius: 24px;
-		background: linear-gradient(135deg, #fddde7 0%, #f5f0ff 45%, #d6f3e4 100%);
-		border: 1px solid var(--warm-200);
-		box-shadow: 0 4px 28px rgba(100, 80, 60, 0.07);
+		background: #fffdf7;
+		border: 3px solid var(--warm-900);
+		box-shadow: 0 4px 28px rgba(20, 20, 20, 0.1);
 		overflow: hidden;
-	}
-
-	/* Animated blobs */
-	.blob-bg {
-		position: absolute;
-		inset: 0;
-		pointer-events: none;
-		overflow: hidden;
-	}
-
-	.blob {
-		position: absolute;
-		border-radius: 50%;
-		filter: blur(50px);
-		opacity: 0.4;
-		mix-blend-mode: multiply;
-	}
-
-	.b1 {
-		width: 300px;
-		height: 300px;
-		top: -80px;
-		right: -60px;
-		background: radial-gradient(circle, #f9bad0, #f090b4);
-		animation: sway 16s ease-in-out infinite;
-	}
-
-	.b2 {
-		width: 240px;
-		height: 240px;
-		bottom: -60px;
-		left: 10%;
-		background: radial-gradient(circle, #a8e4c4, #79ccaa);
-		animation: sway 22s ease-in-out infinite reverse;
-		animation-delay: 4s;
-	}
-
-	.b3 {
-		width: 200px;
-		height: 200px;
-		top: 40%;
-		left: -60px;
-		background: radial-gradient(circle, #d9ccff, #bba8f5);
-		animation: sway 18s ease-in-out infinite;
-		animation-delay: 8s;
 	}
 
 	.rage-header {
@@ -332,7 +279,7 @@
 		color: var(--warm-700);
 	}
 
-	input[type='number'] {
+	input[type="number"] {
 		background: #fff;
 		border: 1.5px solid var(--warm-300);
 		border-radius: 12px;
@@ -341,10 +288,12 @@
 		font-size: 1.6rem;
 		font-family: inherit;
 		width: 100%;
-		transition: border-color 0.2s ease, box-shadow 0.2s ease;
+		transition:
+			border-color 0.2s ease,
+			box-shadow 0.2s ease;
 	}
 
-	input[type='number']:focus {
+	input[type="number"]:focus {
 		border-color: var(--lavender-300);
 		outline: none;
 		box-shadow: 0 0 0 3px rgba(187, 168, 245, 0.2);
@@ -386,7 +335,10 @@
 		font-size: 1.4rem;
 		font-weight: 600;
 		cursor: pointer;
-		transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+		transition:
+			border-color 0.2s ease,
+			color 0.2s ease,
+			background 0.2s ease;
 		font-family: inherit;
 	}
 
@@ -416,7 +368,7 @@
 	}
 
 	.payout-spotlight {
-		background: linear-gradient(135deg, #f5f0ff, #ede5ff);
+		background: var(--lavender-50);
 		border: 1.5px solid var(--lavender-200);
 		border-radius: 16px;
 		padding: 2rem;
@@ -436,10 +388,7 @@
 		font-size: clamp(3.2rem, 7vw, 5.5rem);
 		margin: 0;
 		font-weight: 800;
-		background: linear-gradient(120deg, #bba8f5, #52b38e);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-clip: text;
+		color: var(--lavender-500);
 		line-height: 1.1;
 	}
 
@@ -499,13 +448,6 @@
 		font-size: 1.3rem;
 		color: var(--warm-400) !important;
 		margin: 0;
-	}
-
-	@keyframes sway {
-		0% { transform: translate(0, 0) scale(1); }
-		35% { transform: translate(3%, 5%) scale(1.05); }
-		70% { transform: translate(-4%, -2%) scale(0.97); }
-		100% { transform: translate(0, 0) scale(1); }
 	}
 
 	@media (max-width: 900px) {
