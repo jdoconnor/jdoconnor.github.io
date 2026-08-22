@@ -33,7 +33,7 @@ const socialLinks = {
 
 const currentProjects = [
 	{
-		name: "SecurityPal Concierge Agents",
+		name: "SecurityPal AI",
 		url: "https://securitypal.com",
 		description:
 			"Applied AI rollout pairing concierge agents with human QA for questionnaires and audits.",

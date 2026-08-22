@@ -18,12 +18,12 @@ This file provides context about Jay O'Connor for AI agents working on his behal
 
 ## Current Work
 
-### SecurityPal Concierge Agents
+### SecurityPal AI
 
 - URL: https://securitypal.com
 - Role: Head of Engineering & Product
 - Status: shipping
-- Description: Applied AI rollout pairing concierge agents with human QA for questionnaires and audits.
+- Description: Applied AI solutions for GRC (governance, risk, and compliance) teams.
 
 ### DogShitAI.com
 

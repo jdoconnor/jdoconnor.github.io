@@ -70,6 +70,6 @@ The server includes:
 - **Contact**: Email (jaydoconnor@gmail.com), Cal, San Francisco Bay Area
 - **Social**: LinkedIn, GitHub, Discord
 - **Work History**: SecurityPal, Dogshit AI (Founder), Slack, Quip/Salesforce
-- **Current Projects**: SecurityPal Concierge Agents, DogShitAI.com, Rage Calculator
+- **Current Projects**: SecurityPal AI, DogShitAI.com, Rage Calculator
 - **Expertise**: Product leadership, Engineering strategy, People & culture
 - **Skills**: Team building, Engineering leadership, AI/ML, SvelteKit, TypeScript, and more
