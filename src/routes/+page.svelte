@@ -95,7 +95,7 @@
 			<p class="eyebrow reveal">Product & Engineering Leader</p>
 			<h1 class="reveal delay-1">Hi, I'm Jay.</h1>
 			<div class="stamp-wrap reveal delay-2" aria-hidden="true">
-				<span class="stamp">certified stupid brand ★</span>
+				<span class="stamp">stupid &amp; joyous ★ fun but wise</span>
 			</div>
 			<p class="lede reveal delay-3">
 				I help high-velocity companies turn ambiguous problems into durable systems—and ship the

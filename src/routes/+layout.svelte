@@ -34,7 +34,7 @@
 				<span class="brand-mark" aria-hidden="true">JO</span>
 				<div class="brand-copy">
 					<span class="brand-name">Jay OConnor</span>
-					<span class="brand-caption">my brand is stupid</span>
+					<span class="brand-caption">stupid &amp; joyous · fun but wise</span>
 				</div>
 			</a>
 			<nav class="primary-nav" aria-label="Primary site navigation">
@@ -76,7 +76,7 @@
 				link="https://discordapp.com/users/257316698728693760"
 			/>
 		</nav>
-		<p class="footer-tag">my brand is stupid</p>
+		<p class="footer-tag">stupid &amp; joyous · fun but wise</p>
 	</footer>
 </div>
 
